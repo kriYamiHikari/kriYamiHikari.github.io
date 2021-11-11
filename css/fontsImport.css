@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Semibold";
+    src: url("../fonts/Microsoft YaHei Semibold/msyhsb.ttc");
+}
+@font-face {
+    font-family: "Semilight";
+    src: url("../fonts/Microsoft YaHei Semibold/msyhsl.ttc");
+}
+@font-face {
+    font-family: "SemiHeavy";
+    src: url("../fonts/Microsoft YaHei Semibold/msyhhv.ttc");
+}

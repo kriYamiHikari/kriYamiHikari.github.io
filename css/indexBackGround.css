@@ -1,0 +1,44 @@
+/*主页*/
+.backGroundTitle{
+    font-family: Semibold,sans-serif;
+    font-size: 30px;
+    opacity: 95%;
+    padding-top: 120px;
+}
+.backGroundSubTitle{
+    font-family: Semilight,sans-serif;
+    font-size: 17px;
+    padding-top: 6px;
+    opacity: 93%;
+}
+.backGroundTextContainer{
+    text-align: center;
+    letter-spacing: -0.2px;
+    width: 100%;
+    height: 450px;
+}
+
+/*子首页*/
+.backGroundTextContainer-Other{
+    text-align: center;
+    letter-spacing: -0.2px;
+    width: 100%;
+    height: 150px;
+}
+.backGroundTitle-Other{
+    font-family: Semibold,sans-serif;
+    font-size: 30px;
+    opacity: 95%;
+    padding-top: 50px;
+}
+.backGroundContainerBox{
+    position: relative;
+    top: 100px;
+}
+
+/*音乐页面*/
+.backGroundContainerBoxMedia{
+    position: relative;
+    top: 100px;
+    height: 300px;
+}

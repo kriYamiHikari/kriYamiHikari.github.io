@@ -1,0 +1,87 @@
+.itemContainer{
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px 20px 30px 20px; /*上边距 右边距 下边距 左边距*/
+}
+.itemMain{
+    background: rgb(38,38,38);
+    border-radius: 10px;
+    width: 250px;
+    margin: 20px 15px;
+}
+.itemMainGrid{
+    background: rgba(40,40,40,0.1);
+    border-radius: 7px;
+    border-style: solid;
+    border-color: rgba(255,255,255,0.01);
+    border-width: 1px;
+}
+.postItemStyle{
+    height: 300px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+    flex-basis: 150px;
+}
+.entry-media{
+    overflow: hidden;
+    border-radius: 10px;
+    height: 150px;
+    padding-bottom: 10px;
+}
+.entry-text{
+    margin-top: -10px;
+    height: 150px;
+    padding: 10px;
+    overflow: hidden;
+}
+.imageLoad{
+    height: 150px;
+    position: relative;
+}
+.itemTitleHeader{
+    margin-top: -8px;
+}
+.itemTitle{
+    font-family: Semibold,sans-serif;
+    font-size: 16px;
+    opacity: 90%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.itemText{
+    font-family: Semilight,sans-serif;
+    font-size: 13px;
+    opacity: 90%;
+    height: 87px;
+    margin-top: -4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.hrefNoEffect{
+    text-decoration: none;
+    color: inherit;
+}
+.textRow{
+    margin: 10px;
+    display: flex;
+    padding-bottom: 10px;
+    align-items: center;
+}
+.itemTextRowTitle{
+    font-family: Semibold,sans-serif;
+    font-size: 24px;
+}
+.itemTextRowText{
+    font-family: Semilight,sans-serif;
+    padding-left: 15px;
+    padding-top: 2px;
+    font-size: 12px;
+    opacity: 75%;
+}

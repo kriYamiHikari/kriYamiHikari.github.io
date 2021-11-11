@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>图片分享</title>
+    <style type="text/css">
+        body{
+            margin:0;
+            font-size: 20px;
+            font-family: "Microsoft YaHei",sans-serif;
+            color: white;
+            background-color: #202020;
+        }
+    </style>
+
+    <link rel="icon" href="/images/box_alpha_cut.png">
+
+    <link rel="stylesheet" type="text/css" href="../../css/mainBar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/indexBackGround.css">
+    <link rel="stylesheet" type="text/css" href="../../css/moduleItemCSS.css">
+    <link rel="stylesheet" type="text/css" href="../../css/fontsImport.css">
+    <link rel="stylesheet" type="text/css" href="../../css/indexContainer.css">
+
+    <script src="../../scripts/jquery-3.6.0.min.js"></script>
+    <script src="../../scripts/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
+    <script src="../../scripts/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
+    <script src="../../scripts/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
+</head>
+<body>
+<div class="container" id="main">
+    <div id="mainBarContainerBox" class="mainBarContainer">
+        <div class="mainBarStyle" id="mainBar">
+            <div id="mainBarImageContainer" class="mainBarImageContainer">
+                <div id="mainBarImageBox" class="mainBarImageBox">
+                    <a href="../../index.html"><img src="../../images/box_alpha_cut.png" height="93" alt="图片加载失败"></a>
+                </div>
+                <div class="mainBarImageText" id="mainBarImageText">
+                    <a href="../../index.html"><img src="../../images/text_alpha_hd.png" height="135" alt="图片加载失败"></a>
+                </div>
+            </div>
+            <div id="mainBarText">
+                <ul>
+                    <li>
+                        <a href="../../index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="../../moduleItem-Media.html">音乐分享</a>
+                    </li>
+                    <li>
+                        <a href="../../moduleItem-Tutorials.html">专业教程</a>
+                    </li>
+                    <li>
+                        <a href="../../moduleItem-Programs.html">软件分享</a>
+                    </li>
+                    <li>
+                        <a href="../../moduleItem-imageShare.html">图片分享</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="backGroundContainerBox" class="backGroundContainerBoxMedia">
+        <div id="backGroundMain"
+             style="height: 400px;
+             background-image: url('image.jpg');
+             background-repeat: no-repeat;
+             background-position: center;
+             background-size: 1526px;
+             position: fixed;
+             width: 100%;
+             left: 0px;
+             top: 50px;
+             z-index: -1;filter: blur(3px)">
+            <div id="backGroundBlock"
+                 style="background-image: linear-gradient(to right,
+                 rgba(0,0,0,0.9)5%,
+                 rgba(0,0,0,0.7)35%,
+                 rgba(0,0,0,0.56)100%);
+                 height: 400px"></div>
+
+        </div>
+        <div style="width:100%;height: 300px">
+            <div style="display: flex;justify-content: space-between;padding-top: 20px;">
+                <div style="width: 200px;height: 200px;padding-left: 50px">
+                    123123123123
+                </div>
+                <div style="width: 200px;height: 200px;overflow: hidden;padding-right: 35px">
+                    <img src="imageS.png" style="height: 200px;border-radius: 20px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="secondaryContainer" class="secondaryStyle">
+        <div>test</div>
+        <div>test</div>
+        <div class="subTextContainer">
+            <div>网页制作: kri_YamiHikari</div>
+            <div>QQ: 1906178267</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

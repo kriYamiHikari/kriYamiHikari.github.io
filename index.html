@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>やみヒカリのブログ</title>
+    <style type="text/css">
+        body{
+            margin:0;
+            font-size: 20px;
+            font-family: "Microsoft YaHei",sans-serif;
+            color: white;
+            background-color: #202020;
+        }
+    </style>
+
+    <link rel="icon" href="images/box_alpha_cut.png">
+
+    <link rel="stylesheet" type="text/css" href="css/mainBar.css">
+    <link rel="stylesheet" type="text/css" href="css/indexBackGround.css">
+    <link rel="stylesheet" type="text/css" href="css/moduleItemCSS.css">
+    <link rel="stylesheet" type="text/css" href="css/fontsImport.css">
+    <link rel="stylesheet" type="text/css" href="css/indexContainer.css">
+
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src="scripts/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
+    <script src="scripts/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
+    <script src="scripts/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
+</head>
+<body>
+<div class="container" id="main">
+    <div id="mainBarContainerBox" class="mainBarContainer">
+        <div class="mainBarStyle" id="mainBar">
+            <div id="mainBarImageContainer" class="mainBarImageContainer">
+                <div id="mainBarImageBox" class="mainBarImageBox">
+                    <a href="index.html"><img src="images/box_alpha_cut.png" height="93" alt="图片加载失败"></a>
+                </div>
+                <div class="mainBarImageText" id="mainBarImageText">
+                    <a href="index.html"><img src="images/text_alpha_hd.png" height="135" alt="图片加载失败"></a>
+                </div>
+            </div>
+            <div id="mainBarText">
+                <ul>
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="moduleItem-Media.html">音乐分享</a>
+                    </li>
+                    <li>
+                        <a href="moduleItem-Tutorials.html">专业教程</a>
+                    </li>
+                    <li>
+                        <a href="moduleItem-Programs.html">软件分享</a>
+                    </li>
+                    <li>
+                        <a href="moduleItem-imageShare.html">图片分享</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="backGroundContainerBox" class="backGroundContainerBox">
+        <div id="backGroundMain"
+             style="height: 550px;
+             background-image: url('images/background/01.png');
+             background-repeat: no-repeat;
+             background-position: center;
+             background-size: 1526px;
+             position: fixed;
+             width: 100%;
+             top: 0;
+             z-index: -1">
+            <div id="backGroundBlock" style="background: rgba(40,40,40,0.2);height: 550px"></div>
+        </div>
+        <div id="backGroundTextContainer" class="backGroundTextContainer">
+            <div id="backGroundTitle" class="backGroundTitle">
+                ようこそ！これはやみヒカリのブログ！
+                <div id="backGroundSubTitle" class="backGroundSubTitle">
+                    これは初めてのウェブサイトせいさく、よろしくね！
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="secondaryContainer" class="secondaryStyle"> <!--此处的css样式在indexContainer-->
+        <div id="moduleItem-Media">
+            <div class="itemContainer">
+                <div class="textRow">
+                    <div class="itemTextRowTitle">音乐分享</div>
+                    <div class="itemTextRowText">分享一些自己喜欢的音乐</div>
+                </div>
+                <div class="itemMainGrid">
+                    <div class="row" id="itemMainRow-Media">
+                        <div class="itemMain" style="display: block">
+                            <article class="postItemStyle">
+                                <div class="entry-media">
+                                    <a href="index.html" class="hrefNoEffect">
+                                        <img style="left: -20%" class="imageLoad" src="images/background/03.jpg" alt="图片加载失败">
+                                    </a>
+                                </div>
+                                <div class="entry-text">
+                                    <header class="itemTitleHeader">
+                                        <a href="index.html" class="hrefNoEffect">
+                                            <h2 class="itemTitle">
+                                                Something wrong
+                                            </h2>
+                                        </a>
+                                    </header>
+                                    <div class="itemText" style="white-space: normal;overflow: auto">
+                                        This is a origin item.<br>
+                                        If you see this text it means the page is not loaded properly.<br>
+                                        Please try to reload this page!
+                                    </div>
+                                </div>
+                            </article>
+                        </div> <!--原始样式-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="moduleItem-Tutorials">
+            <div class="itemContainer">
+                <div class="textRow">
+                    <div class="itemTextRowTitle">专业教程</div>
+                    <div class="itemTextRowText">不打好基础怎么能做出好作品呢</div>
+                </div>
+                <div class="itemMainGrid">
+                    <div class="row" id="itemMainRow-Tutorials">
+                        <div class="itemMain" style="display: block">
+                            <article class="postItemStyle">
+                                <div class="entry-media">
+                                    <a href="index.html" class="hrefNoEffect">
+                                        <img style="left: -20%" class="imageLoad" src="images/background/03.jpg" alt="图片加载失败">
+                                    </a>
+                                </div>
+                                <div class="entry-text">
+                                    <header class="itemTitleHeader">
+                                        <a href="index.html" class="hrefNoEffect">
+                                            <h2 class="itemTitle">
+                                                Something wrong
+                                            </h2>
+                                        </a>
+                                    </header>
+                                    <div class="itemText" style="white-space: normal;overflow: auto">
+                                        This is a origin item.<br>
+                                        If you see this text it means the page is not loaded properly.<br>
+                                        Please try to reload this page!
+                                    </div>
+                                </div>
+                            </article>
+                        </div> <!--原始样式-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="moduleItem-Programs">
+            <div class="itemContainer">
+                <div class="textRow">
+                    <div class="itemTextRowTitle">软件分享</div>
+                    <div class="itemTextRowText">一些非常常用但不一定好找的软件资源</div>
+                </div>
+                <div class="itemMainGrid">
+                    <div class="row" id="itemMainRow-Programs">
+                        <div class="itemMain" style="display: block">
+                            <article class="postItemStyle">
+                                <div class="entry-media">
+                                    <a href="index.html" class="hrefNoEffect">
+                                        <img style="left: -20%" class="imageLoad" src="images/background/03.jpg" alt="图片加载失败">
+                                    </a>
+                                </div>
+                                <div class="entry-text">
+                                    <header class="itemTitleHeader">
+                                        <a href="index.html" class="hrefNoEffect">
+                                            <h2 class="itemTitle">
+                                                Something wrong
+                                            </h2>
+                                        </a>
+                                    </header>
+                                    <div class="itemText" style="white-space: normal;overflow: auto">
+                                        This is a origin item.<br>
+                                        If you see this text it means the page is not loaded properly.<br>
+                                        Please try to reload this page!
+                                    </div>
+                                </div>
+                            </article>
+                        </div> <!--原始样式-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="moduleItem-imageShare">
+            <div class="itemContainer">
+                <div class="textRow">
+                    <div class="itemTextRowTitle">图片分享</div>
+                    <div class="itemTextRowText">pixiv上看到的一些精美图片分享一哈</div>
+                </div>
+                <div class="itemMainGrid">
+                    <div class="row" id="itemMainRow-imageShare">
+                        <div class="itemMain" style="display: block">
+                            <article class="postItemStyle">
+                                <div class="entry-media">
+                                    <a href="index.html" class="hrefNoEffect">
+                                        <img style="left: -20%" class="imageLoad" src="images/background/03.jpg" alt="图片加载失败">
+                                    </a>
+                                </div>
+                                <div class="entry-text">
+                                    <header class="itemTitleHeader">
+                                        <a href="index.html" class="hrefNoEffect">
+                                            <h2 class="itemTitle">
+                                                Something wrong
+                                            </h2>
+                                        </a>
+                                    </header>
+                                    <div class="itemText" style="white-space: normal;overflow: auto">
+                                        This is a origin item.<br>
+                                        If you see this text it means the page is not loaded properly.<br>
+                                        Please try to reload this page!
+                                    </div>
+                                </div>
+                            </article>
+                        </div> <!--原始样式-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/itemGET/itemGet.js"></script> <!--页面元素自动导入-->
+
+        <div class="subTextContainer">
+            <div>网页制作: kri_YamiHikari</div>
+            <div>QQ: 1906178267</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

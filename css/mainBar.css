@@ -1,0 +1,71 @@
+#mainBarText ul{
+    padding-left: 45px;
+}
+#mainBarText ul li{
+    display: inline;
+    margin-right: 30px;
+    font-family: Semilight,sans-serif;
+    font-size: 14px;
+    color: white;
+    opacity: 80%;
+}
+#mainBarText ul li a{
+    color: inherit;
+    text-decoration: none;
+}
+.mainBarStyle{
+    background-color: rgb(45, 45, 45);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    opacity: 100%;
+}
+.mainBarImageBox{
+    padding-top: 3px;
+    width: 85px;
+    display: flex;
+    justify-content: center;
+}
+.mainBarImageText{
+    padding-top: 9px;
+}
+.mainBarImageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    overflow: hidden;
+}
+
+
+.mainBarContainer{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+.mainBarContainerStart{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    animation-name: mainBarStart;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+.mainBarContainerExit{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    animation-name: mainBarExit;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+@keyframes mainBarStart {
+    from {top: -100px}
+    to {top: 0}
+}
+@keyframes mainBarExit {
+    from {top:0}
+    to {top: -100px}
+}
