@@ -1,0 +1,21 @@
+.debugTextContainer{
+    position: fixed;
+    left: 0;
+    top: 350px;
+    text-align: left;
+    color: #fed062;
+    opacity: 90%;
+}
+.debugDisplayFlex{
+    display: flex;
+}
+.debugTextTitle{
+    color: #2badfe;
+}
+.debugText{
+    color: #bcfe74;
+}
+.debugLyricText{
+    color: white;
+    display: flex;
+}

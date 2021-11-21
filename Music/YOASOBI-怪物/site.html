@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>YOASOBI 怪物</title>
+    <title>null</title>
     <style type="text/css">
         body{
             margin:0;
@@ -17,12 +17,14 @@
 
     <link rel="stylesheet" type="text/css" href="../../css/mainBar.css">
     <link rel="stylesheet" type="text/css" href="../../css/indexBackGround.css">
-    <link rel="stylesheet" type="text/css" href="../../css/moduleItemCSS.css">
     <link rel="stylesheet" type="text/css" href="../../css/fontsImport.css">
     <link rel="stylesheet" type="text/css" href="../../css/indexContainer.css">
-    <link rel="stylesheet" type="text/css" href="../../css/musicIndex.css">
 
-    <script src="../../scripts/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/musicHTML/musicIndex.css">
+    <link rel="stylesheet" type="text/css" href="../../css/musicHTML/musicBody.css">
+    <link rel="stylesheet" type="text/css" href="../../css/musicHTML/debug.css">
+    <link rel="stylesheet" type="text/css" href="../../css/musicHTML/musicLyric.css">
+
     <script src="../../scripts/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
     <script src="../../scripts/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
     <script src="../../scripts/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
@@ -83,15 +85,10 @@
             <div class="musicIndexItemContainer">
                 <div class="musicIndexItemTextContainer">
                     <div class="musicIndexItemTextTitleContainer">
-                        <div class="musicIndexItemTextTitle">怪物</div>
-                        <div class="musicIndexItemTextArtist">YOASOBI</div>
+                        <div class="musicIndexItemTextTitle" id="musicIndexTextTitle">null</div>
+                        <div class="musicIndexItemTextArtist" id="musicIndexTextArtist">null</div>
                     </div>
-                    <div class="musicIndexItemTextInfoContainer">
-                        BEASTARS 第二季片头曲<br>
-                        作词: Ayase<br>
-                        作曲: Ayase<br>
-                        发行日: 2021/01/06
-                    </div>
+                    <div class="musicIndexItemTextInfoContainer" id="musicIndexTextInfo">null</div>
                 </div>
                 <div class="musicIndexItemImageContainer">
                     <img src="imageS.png" class="musicIndexItemImage" alt="加载图片失败">
@@ -101,10 +98,72 @@
     </div>
 
     <div id="secondaryContainer" class="secondaryStyle">
-        <div style="display: flex;justify-content: center;padding-top: 10px">
-            <audio controls="controls">
-                <source src="YOASOBI-怪物.mp3">
-            </audio>
+        <div class="musicBodyContainer">
+            <div class="musicBodyRemindText">点击播放按钮播放</div>
+            <div id="musicBodyMusicControlBar" class="musicBodyMusicControlBar">
+                <audio controls="controls">
+                    <source src="media.mp3">
+                </audio>
+            </div>
+            <div id="timeLineText">123</div>
+            <script src="../../scripts/musicHTMLScript/musicTimeGet.js"></script>
+
+            <div id="musicBodyLyricContainer">
+                <div>
+                    <div id="musicLyricTextContainer">
+                        <div id="musicLyricOriginText" style="display: none"></div>
+                        <div id="musicLyricMainText"></div>
+                    </div>
+                    <div id="debugTextContainer" class="debugTextContainer"  style="display: none">
+                        <div>[debug文本]</div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">歌词整体偏移时间：</div>
+                            <div id="lyricTimeOffset" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">歌词最大行：</div>
+                            <div id="maxLyricColumn" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前所在行：</div>
+                            <div id="nowLyricColumn" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前歌词：</div>
+                            <div id="nowLyricText" class="debugLyricText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前行最大字数：</div>
+                            <div id="nowLyricColumnMaxWordAmount" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前所在字：</div>
+                            <div id="nowLyricWordText" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前字出现时间：</div>
+                            <div id="nowLyricWordTime" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">下个字：</div>
+                            <div id="nextLyricWord" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">下个字出现时间：</div>
+                            <div id="nextLyricWordTime" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">下个字与上个字相差时间：</div>
+                            <div id="lyricWordTimeDifference" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">下个字与上个字相差时间(实时)：</div>
+                            <div id="lyricWordTimeDiffReal" class="debugText"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="../../scripts/musicHTMLScript/musicLyricGetNew.js"></script>
         </div>
         <div class="subTextContainer">
             <div>网页制作: kri_YamiHikari</div>

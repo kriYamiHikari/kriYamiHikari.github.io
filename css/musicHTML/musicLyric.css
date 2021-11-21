@@ -1,0 +1,34 @@
+.testLyric{
+    background: -webkit-linear-gradient(left,red 0%,white 0%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255,255,255,0.1);
+}
+.testLyricZXC{
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 600ms;
+    animation-name: test2;
+}
+@keyframes test {
+    from {
+        background: -webkit-linear-gradient(left,red 0%,white 0%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    to {
+        background: -webkit-linear-gradient(left,red 100%,white 0%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+@keyframes test2 {
+    from{
+        color: #2badfe;
+    }
+    to{
+        color: white;
+    }
+}
