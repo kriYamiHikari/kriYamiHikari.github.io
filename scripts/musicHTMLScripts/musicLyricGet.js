@@ -19,11 +19,15 @@ function main() {
         if (this.readyState===4 && this.status===200){
             text=this.responseText
             setInterval(timeTextFix,1) //获取播放时间 转换文本格式
+            setInterval(setFontColor,30) //实时修改字体颜色
+
             setInterval(getLyricColumn,1) //获取歌词所在行
-            setInterval(setFontColor,1) //实时修改字体颜色
+
             setInterval(realTimeDiff,1) //实时获取字相差时间
-            setInterval(restoreLyricFontColor,1) //还原字体颜色
+            setInterval(restoreLyricFontColor,70) //还原字体颜色
+
             initLyricText() //初始化歌词文本 载入到页面
+            tapJumpColumn() //点击某行歌词 时间跳转到对应行首字开始播放
             xmlHttpMusicInfo.open("get","info.xml",true)
             xmlHttpMusicInfo.send()
         }
@@ -49,8 +53,19 @@ function main() {
 
     function timeTextFix() { //获取歌曲播放时间并转换格式供正则表达式匹配事件
         timeText=musicTimeMinuteText+":"+musicTimeSecondText.replace(".","\\.")
-        debug()
-        tapJumpColumn() //点击某行歌词 时间跳转到对应行首字开始播放
+        showDebug()
+    }
+    function showDebug() {
+        if (document.getElementById('debugTextContainer').style.display==="block"){
+            debug()
+        }
+        document.getElementsByClassName('subTextContainer')[0].onclick=function () {
+            if (document.getElementById('debugTextContainer').style.display==="none"){
+                document.getElementById('debugTextContainer').style.display="block"
+            }else{
+                document.getElementById('debugTextContainer').style.display="none"
+            }
+        }
     }
     function realTimeDiff() {
         nextRealTime=Number(nextWordTime-newTimeWithOffset).toFixed(2)
@@ -100,7 +115,8 @@ function main() {
                 musicLyricMainText.children[c].children[1].getElementsByTagName("div")[n].setAttribute('style',"background: -webkit-linear-gradient(left,#bcfe74 "+wordRender+"%,white 0%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-text-stroke-width: 0.56px;-webkit-text-stroke-color: rgba(255,255,255,0.1);cursor: pointer")
                 try{
                     for (let q=0;q<=n-1;q++){
-                        musicLyricMainText.children[c].children[1].getElementsByTagName("div")[q].setAttribute('style',"background: -webkit-linear-gradient(left,#bcfe74 "+100+"%,white 0%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-text-stroke-width: 0.56px;-webkit-text-stroke-color: rgba(255,255,255,0.1);cursor: pointer")
+                        //musicLyricMainText.children[c].children[1].getElementsByTagName("div")[q].setAttribute('style',"background: -webkit-linear-gradient(left,#bcfe74 "+100+"%,white 0%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-text-stroke-width: 0.56px;-webkit-text-stroke-color: rgba(255,255,255,0.1);cursor: pointer")
+                        musicLyricMainText.children[c].children[1].getElementsByTagName("div")[q].setAttribute('style',"color:#bcfe74;opacity: 93%;cursor: pointer")
                     }
                 }catch (e) {
 
@@ -189,6 +205,7 @@ function main() {
         playing=false
     }
     musicBodyMusicControlBar.getElementsByTagName("audio")[0].onseeked=function(){ //检测跳转事件 如果跳转音频播放点则刷新全部歌词为默认样式
+        n=0
         for (let b=0;b<i;b++){
             for (let q=0;q<musicLyricMainText.children[b].children[1].children.length;q++){
                 musicLyricMainText.children[b].children[1].getElementsByTagName("div")[q].setAttribute('style',"color:white;opacity: 93%;cursor: pointer")
