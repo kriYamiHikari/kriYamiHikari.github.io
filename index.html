@@ -21,9 +21,9 @@
     <link rel="stylesheet" type="text/css" href="css/fontsImport.css">
     <link rel="stylesheet" type="text/css" href="css/indexContainer.css">
 
-    <script src="scripts/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
-    <script src="scripts/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
-    <script src="scripts/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
+    <script src="scripts/mainBar/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
+    <script src="scripts/mainBar/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
+    <script src="scripts/mainBar/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
 </head>
 <body>
 <div class="container" id="main">
@@ -39,23 +39,10 @@
             </div>
             <div id="mainBarText">
                 <ul>
-                    <li>
-                        <a href="index.html">首页</a>
-                    </li>
-                    <li>
-                        <a href="moduleItem-Media.html">音乐分享</a>
-                    </li>
-                    <li>
-                        <a href="moduleItem-Tutorials.html">专业教程</a>
-                    </li>
-                    <li>
-                        <a href="moduleItem-Programs.html">软件分享</a>
-                    </li>
-                    <li>
-                        <a href="moduleItem-imageShare.html">图片分享</a>
-                    </li>
+
                 </ul>
             </div>
+            <script src="scripts/mainBar/hrefAutoAdd/mainBarHrefAutoAddIndex.js"></script> <!--自动添加导航条内容-->
         </div>
     </div>
     <div id="backGroundContainerBox" class="backGroundContainerBox">
@@ -190,11 +177,11 @@
         <div id="moduleItem-imageShare">
             <div class="itemContainer">
                 <div class="textRow">
-                    <div class="itemTextRowTitle">图片分享</div>
-                    <div class="itemTextRowText">pixiv上看到的一些精美图片分享一哈</div>
+                    <div class="itemTextRowTitle">小应用</div>
+                    <div class="itemTextRowText">不一定有用的八嘎小应用</div>
                 </div>
                 <div class="itemMainGrid">
-                    <div class="row" id="itemMainRow-imageShare">
+                    <div class="row" id="itemMainRow-tools">
                         <div class="itemMain" style="display: block">
                             <article class="postItemStyle">
                                 <div class="entry-media">

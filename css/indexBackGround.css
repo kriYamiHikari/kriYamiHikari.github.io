@@ -42,3 +42,9 @@
     top: 100px;
     height: 300px;
 }
+/*工具页面*/
+.backGroundContainerBoxTools{
+    position: relative;
+    top: 100px;
+    height: 160px;
+}

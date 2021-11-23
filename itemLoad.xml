@@ -26,6 +26,16 @@
                 Honda『VEZEL』CM歌曲
             </text>
         </item>
+        <item>
+            <htmlSrc>Music/Overidea-カナリアの空/site.html</htmlSrc>
+            <imageSrc>Music/Overidea-カナリアの空/image.jpg</imageSrc>
+            <imageLeft>-12%</imageLeft>
+            <title>カナリアの空</title>
+            <text>
+                Overidea × Yunoshin &lt;br&gt;
+                金糸雀的雾天
+            </text>
+        </item>
     </moduleItem-Media>
     <moduleItem-Tutorials>
         <item>
@@ -52,64 +62,16 @@
             </text>
         </item>
     </moduleItem-Programs>
-    <moduleItem-imageShare>
+    <moduleItem-tools>
         <item>
-            <htmlSrc>Music/YOASOBI-怪物/site.html</htmlSrc>
-            <imageSrc>Music/YOASOBI-怪物/image.jpg</imageSrc>
-            <imageLeft>-4%</imageLeft>
-            <title>怪物</title>
+            <htmlSrc>Tools\randomRedEnvelope/site.html</htmlSrc>
+            <imageSrc>Tools\randomRedEnvelope/image.jpg</imageSrc>
+            <imageLeft>-0.5%</imageLeft>
+            <title>红包抽奖</title>
             <text>
-                YOASOBI
+                随机抽奖摸红包 &lt;br&gt;
+                内容自定义
             </text>
         </item>
-        <item>
-            <htmlSrc>Music/YOASOBI-怪物/site.html</htmlSrc>
-            <imageSrc>Music/YOASOBI-怪物/image.jpg</imageSrc>
-            <imageLeft>-4%</imageLeft>
-            <title>怪物</title>
-            <text>
-                YOASOBI
-            </text>
-        </item>
-        <item>
-            <htmlSrc>index.html</htmlSrc>
-            <imageSrc>images/background/05.png</imageSrc>
-            <imageLeft>-25%</imageLeft>
-            <title>这是第二个元素 隶属于图片区</title>
-            <text>
-                卧槽！ &lt;br/&gt;
-                换行测试
-            </text>
-        </item>
-        <item>
-            <htmlSrc>index.html</htmlSrc>
-            <imageSrc>images/background/05.png</imageSrc>
-            <imageLeft>-25%</imageLeft>
-            <title>这是第二个元素</title>
-            <text>
-                卧槽！ &lt;br/&gt;
-                换行测试
-            </text>
-        </item>
-        <item>
-            <htmlSrc>index.html</htmlSrc>
-            <imageSrc>images/background/05.png</imageSrc>
-            <imageLeft>-25%</imageLeft>
-            <title>这是第二个元素</title>
-            <text>
-                卧槽！ &lt;br/&gt;
-                换行测试
-            </text>
-        </item>
-        <item>
-            <htmlSrc>index.html</htmlSrc>
-            <imageSrc>images/background/05.png</imageSrc>
-            <imageLeft>-25%</imageLeft>
-            <title>这是第二个元素</title>
-            <text>
-                卧槽！ &lt;br/&gt;
-                换行测试
-            </text>
-        </item>
-    </moduleItem-imageShare>
+    </moduleItem-tools>
 </main>

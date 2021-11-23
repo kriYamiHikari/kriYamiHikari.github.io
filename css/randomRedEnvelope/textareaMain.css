@@ -1,0 +1,148 @@
+.redEnvelopeItemInputTextarea{
+    resize: none;
+    font-family: Semilight,sans-serif;
+    border-radius: 10px;
+    width: 600px;
+    height: 100px;
+    font-size: 20px;
+    padding: 12px;
+}
+.redEnvelopeItemInputTextareaContainer{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+.redEnvelopeItemRemind{
+    font-family: Semibold,sans-serif;
+    opacity: 68%;
+    padding-top: 10px;
+}
+.redEnvelopeItemInputContainer{
+    text-align: center;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.redEnvelopeItemButton{
+    font-family: Semibold,sans-serif;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(180,180,180);
+    cursor: pointer;
+    height: 30px;
+}
+
+.redEnvelopeItemContainer{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.redEnvelopeItem{
+    position: relative;
+    padding: 12px;
+    width: 135px;
+    opacity: 0;
+
+    animation-duration: 350ms;
+    animation-timing-function: ease-in-out;
+    animation-name: redEnvelopeInit;
+    animation-fill-mode: forwards;
+}
+.redEnvelopeItemCloseImg{
+    width: 100%;
+}
+.redEnvelopeItemCloseImgAnimation{
+    transform: rotateY(0deg);
+    animation-duration: 2000ms;
+    animation-timing-function: linear;
+    animation-name: itemHidden;
+    animation-fill-mode: forwards;
+    width: 100%;
+}
+
+.redEnvelopeItemViewContainer{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 135px;
+    height: 196px;
+    background-color: rgb(255,255,255);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(47,82,143);
+    overflow: hidden;
+    display: none;
+}
+.redEnvelopeItemViewContainerAnimation{
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 135px;
+    height: 196px;
+    background-color: rgb(255,255,255);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(47,82,143);
+    overflow: hidden;
+
+    opacity: 0;
+    transform: rotateY(0deg);
+    animation-delay: 1000ms;
+    animation-duration: 2000ms;
+    animation-timing-function: linear;
+    animation-name:itemVisible;
+    animation-fill-mode: forwards;
+}
+.redEnvelopeItemViewText{
+    display: flex;
+    font-family: Semibold,sans-serif;
+    color: black;
+    height: 200px;
+    padding-right: 60px;
+    padding-left: 60px;
+    justify-content: center;
+    align-items: center;
+    word-break: break-word;
+    line-height: 22px;
+}
+
+@keyframes itemHidden {
+    0%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        opacity: 100%;
+        transform: rotateY(360deg);
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes itemVisible {
+    0%{
+        transform: rotateY(0deg);
+        opacity: 0;
+    }
+    50%{
+        transform: rotateY(360deg);
+    }
+    100%{
+        opacity: 100;
+    }
+}
+@keyframes redEnvelopeInit {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+}

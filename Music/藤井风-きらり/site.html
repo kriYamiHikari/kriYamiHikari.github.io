@@ -23,11 +23,10 @@
     <link rel="stylesheet" type="text/css" href="../../css/musicHTML/musicIndex.css">
     <link rel="stylesheet" type="text/css" href="../../css/musicHTML/musicBody.css">
     <link rel="stylesheet" type="text/css" href="../../css/musicHTML/debug.css">
-    <link rel="stylesheet" type="text/css" href="../../css/musicHTML/musicLyric.css">
 
-    <script src="../../scripts/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
-    <script src="../../scripts/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
-    <script src="../../scripts/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
+    <script src="../../scripts/mainBar/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
+    <script src="../../scripts/mainBar/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
+    <script src="../../scripts/mainBar/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
 </head>
 <body>
 <div class="container" id="main">
@@ -43,23 +42,10 @@
             </div>
             <div id="mainBarText">
                 <ul>
-                    <li>
-                        <a href="../../index.html">首页</a>
-                    </li>
-                    <li>
-                        <a href="../../moduleItem-Media.html">音乐分享</a>
-                    </li>
-                    <li>
-                        <a href="../../moduleItem-Tutorials.html">专业教程</a>
-                    </li>
-                    <li>
-                        <a href="../../moduleItem-Programs.html">软件分享</a>
-                    </li>
-                    <li>
-                        <a href="../../moduleItem-imageShare.html">图片分享</a>
-                    </li>
+
                 </ul>
             </div>
+            <script src="../../scripts/mainBar/hrefAutoAdd/mainBarHrefAutoAddChild.js"></script> <!--自动添加导航条内容-->
         </div>
     </div>
     <div id="backGroundContainerBox" class="backGroundContainerBoxMedia">
@@ -106,7 +92,7 @@
                 </audio>
             </div>
             <div id="timeLineText">123</div>
-            <script src="../../scripts/musicHTMLScript/musicTimeGet.js"></script>
+            <script src="../../scripts/musicHTMLScripts/musicTimeGet.js"></script>
 
             <div id="musicBodyLyricContainer">
                 <div>
@@ -163,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            <script src="../../scripts/musicHTMLScript/musicLyricGetNew.js"></script>
+            <script src="../../scripts/musicHTMLScripts/musicLyricGet.js"></script>
         </div>
         <div class="subTextContainer">
             <div>网页制作: kri_YamiHikari</div>
