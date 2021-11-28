@@ -355,7 +355,7 @@ function main() {
             isPositionEnd=false
         }
 
-        if (disableAutoScroll===false){ //如果没有禁止自动滚动
+        if (disableAutoScroll===false && playing===true){ //如果没有禁止自动滚动 并且处于播放状态
             if (lyricLineScrollOffset<0 && musicLyricMainText.scrollTop!==0){ //特殊情况 如果居中值是负数则直接滚动到首
                 let number2=Math.ceil(musicLyricMainText.scrollTop/0.3/1000*10)
                 musicLyricMainText.scrollBy(0,-number2)
