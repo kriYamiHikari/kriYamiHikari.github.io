@@ -16,3 +16,46 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+#musicBodyLyricContainer{
+    padding: 10px 0;
+}
+
+#musicLyricTextContainer{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#musicLyricMainText{
+    overflow-y: scroll;
+    height: 100px;
+    width: 520px;
+}
+
+#musicLyricMainText::-webkit-scrollbar{
+    width: 6px;
+    background-color: rgb(190,190,190);
+    border-radius: 5px;
+}
+#musicLyricMainText::-webkit-scrollbar-thumb{
+    background-color: rgb(80,80,80);
+    border-radius: 5px;
+}
+
+#timeLineText{
+    display: none;
+}
+
+.newLine{
+    padding: 10px 0;
+}
+
+.newTimeLine{
+    display: none;
+    justify-content: center;
+}
+.newTextLine{
+    display: flex;
+    justify-content: center;
+}

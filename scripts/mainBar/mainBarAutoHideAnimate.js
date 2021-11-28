@@ -32,7 +32,7 @@ function main() {
                     }
                 }
             }else if (b-t>0){ //鼠标向下滚动
-                if (topPosition<40){ //页面要向下到一定程度才会隐藏
+                if (topPosition<50){ //页面要向下到一定程度才会隐藏
                     if (abc===true){
                         mainBarItem.className="mainBarContainerExit"
                         abc=false

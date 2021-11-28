@@ -77,8 +77,9 @@
                     <div class="musicIndexItemTextInfoContainer" id="musicIndexTextInfo">null</div>
                 </div>
                 <div class="musicIndexItemImageContainer">
-                    <img src="imageS.png" class="musicIndexItemImage" alt="加载图片失败">
+                    <img src="imageS.jpg" class="musicIndexItemImage" alt="加载图片失败">
                 </div>
+                <script src="../../scripts/musicHTMLScripts/musicLayoutAuto.js"></script> <!--自动设置布局-->
             </div>
         </div>
     </div>
@@ -146,14 +147,44 @@
                             <div class="debugTextTitle">下个字与上个字相差时间(实时)：</div>
                             <div id="lyricWordTimeDiffReal" class="debugText"></div>
                         </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前行div所在Y坐标(容器内)：</div>
+                            <div id="nowLyricLinePosition" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前歌词框滚动条所在坐标：</div>
+                            <div id="nowLyricContainerScrollContainer" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前歌词框容器最大高度：</div>
+                            <div id="nowLyricContainerMaxHeight" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">计时器（用于复原自动滚动歌词）</div>
+                            <div id="delayTimeScrollNow" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">是否正在播放：</div>
+                            <div id="isPlaying" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">是否禁止自动滚动：</div>
+                            <div id="isDisableAutoScroll" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">是否正在自动滚动：</div>
+                            <div id="isAutoScroll" class="debugText"></div>
+                        </div>
                     </div>
                 </div>
             </div>
             <script src="../../scripts/musicHTMLScripts/musicLyricGet.js"></script>
         </div>
         <div class="subTextContainer">
-            <div>网页制作: kri_YamiHikari</div>
-            <div>QQ: 1906178267</div>
+            <div id="subText">
+                网页制作: kri_YamiHikari<br>
+                QQ: 1906178267
+            </div>
         </div>
     </div>
 </div>

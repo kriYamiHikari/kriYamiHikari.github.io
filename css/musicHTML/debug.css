@@ -1,10 +1,10 @@
 .debugTextContainer{
     position: fixed;
     left: 0;
-    top: 350px;
     text-align: left;
     color: #fed062;
     opacity: 90%;
+    font-size: 16px;
 }
 .debugDisplayFlex{
     display: flex;

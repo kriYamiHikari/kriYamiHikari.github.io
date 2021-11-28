@@ -7,7 +7,7 @@
     justify-content: space-between;
     padding-top: 20px;
     padding-left: 40px;
-    padding-right: 45px;
+    padding-right: 50px;
 }
 .musicIndexItemTextContainer{
     width: 250px;
@@ -38,9 +38,10 @@
     width: 200px;
     height: 200px;
     overflow: hidden;
-    padding-right: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
 }
 .musicIndexItemImage{
-    height: 200px;
-    border-radius: 20px;
+    height: 100%;
 }
