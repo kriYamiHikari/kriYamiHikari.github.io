@@ -59,3 +59,9 @@
     display: flex;
     justify-content: center;
 }
+.newTextTSLine{
+    font-size: 18px;
+    display: flex;
+    min-width: 10px;
+    justify-content: center;
+}

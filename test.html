@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="testText">test<br></div>
+<div id="testText2" style="margin-top: 20px">123123123</div>
+<textarea style="height: 200px" id="textArea"></textarea>
+<button id="btn1">test</button>
+<div style="display: flex;white-space: pre">
+    <div>123 </div>
+    <div>456456</div>
+</div>
+<script>
+    function main() {
+        let xmlDoc=new XMLHttpRequest()
+        xmlDoc.onreadystatechange=function () {
+            if (this.status===200 && this.readyState===4){
+                let xml=this.responseXML
+                //let b=xml.getElementsByTagName("artists")[0].children.length
+                let b=xml.getElementsByTagName("tag")
+                let temp=[]
+                for (let i=0;i<b.length;i++){
+                    if (b[i].innerHTML==="English"){
+                        temp.push(b[i])
+                    }
+                }
+                // for (let i=0;i<b;i++){
+                //     document.getElementById('testText').innerHTML+=xml.getElementsByTagName('artists')[0].children[i].tagName+" "+i
+                // }
+                for (let i=0;i<temp.length;i++){
+                    document.getElementById('testText').innerHTML+=temp[i].parentElement.innerHTML +" "+"<br>"
+                }
+                //document.getElementById('testText').innerHTML=temp.length
+
+                document.getElementById('testText2').innerHTML=temp[0].parentElement.children[4].textContent
+            }
+        }
+        xmlDoc.open("get","itemLoad-Music.xml",true)
+        xmlDoc.send()
+        document.getElementById('btn1').onclick=function () {
+            document.getElementById('testText2').innerHTML=document.getElementById('textArea').value
+        }
+    }
+    main()
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<main>
+	<!-- &lt;表示小于号<  &gt;表示大于号> -->
+	<!--
+	小于号和大于号在xml文档当中有特殊含义
+	所以如果需要以文本的形式写入数据则需要转义
+	不然标签会被错误的识别 -->
+	<!--详情查看https://www.w3school.com.cn/xml/xml_syntax.asp-->
+    <moduleItem-Media>
+        <artists>
+            <YOASOBI>
+                <item>
+                    <htmlSrc>Music/YOASOBI-怪物/site.html</htmlSrc>
+                    <imageSrc>Music/YOASOBI-怪物/image.jpg</imageSrc>
+                    <imageLeft>-4%</imageLeft>
+                    <title>怪物</title>
+                    <text>
+                        YOASOBI &lt;br&gt;
+                        BEASTARS 第二季片头曲
+                    </text>
+                    <language>Japanese</language>
+                </item>
+            </YOASOBI>
+            <幾田りら>
+                <item>
+                    <htmlSrc>Music/幾田りら-Aitai/site.html</htmlSrc>
+                    <imageSrc>Music/幾田りら-Aitai/image.jpg</imageSrc>
+                    <imageLeft>-22%</imageLeft>
+                    <title>Aitai</title>
+                    <text>
+                        幾田りら &lt;br&gt;
+                        加藤ミリヤ　TRIBUTE ALBUM&lt;br&gt;
+                        『INSPIRE』
+                    </text>
+                    <language>Japanese</language>
+                </item>
+            </幾田りら>
+            <藤井风>
+                <item>
+                    <htmlSrc>Music/藤井风-きらり/site.html</htmlSrc>
+                    <imageSrc>Music/藤井风-きらり/image.jpg</imageSrc>
+                    <imageLeft>-4%</imageLeft>
+                    <title>きらり</title>
+                    <text>
+                        藤井风 &lt;br&gt;
+                        Honda『VEZEL』CM歌曲
+                    </text>
+                    <language>Japanese</language>
+                </item>
+            </藤井风>
+            <Overidea>
+                <item>
+                    <htmlSrc>Music/Overidea-カナリアの空/site.html</htmlSrc>
+                    <imageSrc>Music/Overidea-カナリアの空/image.jpg</imageSrc>
+                    <imageLeft>-12%</imageLeft>
+                    <title>カナリアの空</title>
+                    <text>
+                        Overidea × Yunoshin &lt;br&gt;
+                        金糸雀的雾天
+                    </text>
+                    <language>Japanese</language>
+                </item>
+            </Overidea>
+            <Overidea>
+                <item>
+                    <htmlSrc>Music/Overidea-カナリアの空/site.html</htmlSrc>
+                    <imageSrc>Music/Overidea-カナリアの空/image.jpg</imageSrc>
+                    <imageLeft>-12%</imageLeft>
+                    <title>カナリアの空</title>
+                    <text>
+                        Overidea × Yunoshin &lt;br&gt;
+                        金糸雀的雾天
+                    </text>
+                    <language>Japanese</language>
+                </item>
+            </Overidea>
+        </artists>
+    </moduleItem-Media>
+</main>

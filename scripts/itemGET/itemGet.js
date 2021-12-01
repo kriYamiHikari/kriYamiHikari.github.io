@@ -24,10 +24,10 @@ function itemLoad(){ //加载页面元素
         if (this.readyState===4 && this.status===200){
             let xmlDoc=this.responseXML
 
-            let itemMaxNew_Media=xmlDoc.getElementsByTagName("moduleItem-Media")[0].childNodes //获取音乐分享xml已有最大数量
-            let itemMaxNew_Tutorials=xmlDoc.getElementsByTagName("moduleItem-Tutorials")[0].childNodes //获取专业教程xml已有最大数量
-            let itemMaxNew_Programs=xmlDoc.getElementsByTagName("moduleItem-Programs")[0].childNodes //获取软件分享xml已有最大数量
-            let itemMaxNew_imageShare=xmlDoc.getElementsByTagName("moduleItem-tools")[0].childNodes //获取图片分享xml已有最大数量
+            let itemMaxNew_Media=xmlDoc.getElementsByTagName("moduleItem-Media")[0].children //获取音乐分享xml已有最大数量
+            let itemMaxNew_Tutorials=xmlDoc.getElementsByTagName("moduleItem-Tutorials")[0].children //获取专业教程xml已有最大数量
+            let itemMaxNew_Programs=xmlDoc.getElementsByTagName("moduleItem-Programs")[0].children //获取软件分享xml已有最大数量
+            let itemMaxNew_imageShare=xmlDoc.getElementsByTagName("moduleItem-tools")[0].children //获取图片分享xml已有最大数量
 
             itemMainRow_Media.innerHTML="" //清空音乐分享原有测试元素
             itemMainRow_Tutorials.innerHTML="" //清空专业教程原有测试元素
@@ -35,45 +35,45 @@ function itemLoad(){ //加载页面元素
             itemMainRow_tools.innerHTML=""
 
 
-            for (let i=1;i<itemMaxNew_Media.length-1;i=i+2){
-                let afterTxt=originItemLoadTxt.replace(/This is a test Text/,xmlDoc.getElementsByTagName("moduleItem-Media")[0].childNodes[i].childNodes[9].childNodes[0].nodeValue) //替换元素文本
-                afterTxt=afterTxt.replace(/This is a test Title/,xmlDoc.getElementsByTagName("moduleItem-Media")[0].childNodes[i].childNodes[7].childNodes[0].nodeValue) //替换元素标题
-                afterTxt=afterTxt.replace(/images\/background\/03.jpg/,xmlDoc.getElementsByTagName("moduleItem-Media")[0].childNodes[i].childNodes[3].childNodes[0].nodeValue) //替换元素图片
-                afterTxt=afterTxt.replace(/index\.html/g,xmlDoc.getElementsByTagName("moduleItem-Media")[0].childNodes[i].childNodes[1].childNodes[0].nodeValue) //替换元素跳转网页路径
-                afterTxt=afterTxt.replace(/left: -20%/,"left: " + xmlDoc.getElementsByTagName("moduleItem-Media")[0].childNodes[i].childNodes[5].childNodes[0].nodeValue) //替换元素图片左偏移程度
+            for (let i=0;i<itemMaxNew_Media.length;i++){
+                let afterTxt=originItemLoadTxt.replace(/This is a test Text/,itemMaxNew_Media[i].children[4].textContent) //替换元素文本
+                afterTxt=afterTxt.replace(/This is a test Title/,itemMaxNew_Media[i].children[3].textContent) //替换元素标题
+                afterTxt=afterTxt.replace(/images\/background\/03.jpg/,itemMaxNew_Media[i].children[1].textContent) //替换元素图片
+                afterTxt=afterTxt.replace(/index\.html/g,itemMaxNew_Media[i].children[0].textContent) //替换元素跳转网页路径
+                afterTxt=afterTxt.replace(/left: -20%/,"left: " + itemMaxNew_Media[i].children[2].textContent) //替换元素图片左偏移程度
 
                 if (itemMainRow_Media.childNodes.length<5){ //限制主页面显示元素最大数量
                     itemMainRow_Media.innerHTML+=afterTxt
                 }
             } //遍历文件添加音乐分享元素
-            for (let i=1;i<itemMaxNew_Tutorials.length-1;i=i+2){
-                let afterTxt=originItemLoadTxt.replace(/This is a test Text/,xmlDoc.getElementsByTagName("moduleItem-Tutorials")[0].childNodes[i].childNodes[9].childNodes[0].nodeValue) //替换元素文本
-                afterTxt=afterTxt.replace(/This is a test Title/,xmlDoc.getElementsByTagName("moduleItem-Tutorials")[0].childNodes[i].childNodes[7].childNodes[0].nodeValue) //替换元素标题
-                afterTxt=afterTxt.replace(/images\/background\/03.jpg/,xmlDoc.getElementsByTagName("moduleItem-Tutorials")[0].childNodes[i].childNodes[3].childNodes[0].nodeValue) //替换元素图片
-                afterTxt=afterTxt.replace(/index\.html/g,xmlDoc.getElementsByTagName("moduleItem-Tutorials")[0].childNodes[i].childNodes[1].childNodes[0].nodeValue) //替换元素跳转网页路径
-                afterTxt=afterTxt.replace(/left: -20%/,"left: " + xmlDoc.getElementsByTagName("moduleItem-Tutorials")[0].childNodes[i].childNodes[5].childNodes[0].nodeValue) //替换元素图片左偏移程度
+            for (let i=0;i<itemMaxNew_Tutorials.length;i++){
+                let afterTxt=originItemLoadTxt.replace(/This is a test Text/,itemMaxNew_Tutorials[i].children[4].textContent) //替换元素文本
+                afterTxt=afterTxt.replace(/This is a test Title/,itemMaxNew_Tutorials[i].children[3].textContent) //替换元素标题
+                afterTxt=afterTxt.replace(/images\/background\/03.jpg/,itemMaxNew_Tutorials[i].children[1].textContent) //替换元素图片
+                afterTxt=afterTxt.replace(/index\.html/g,itemMaxNew_Tutorials[i].children[0].textContent) //替换元素跳转网页路径
+                afterTxt=afterTxt.replace(/left: -20%/,"left: " + itemMaxNew_Tutorials[i].children[2].textContent) //替换元素图片左偏移程度
 
                 if (itemMainRow_Tutorials.childNodes.length<5){ //限制主页面显示元素最大数量
                     itemMainRow_Tutorials.innerHTML+=afterTxt
                 }
             } //遍历文件添加专业教程元素*/
-            for (let i=1;i<itemMaxNew_Programs.length-1;i=i+2){
-                let afterTxt=originItemLoadTxt.replace(/This is a test Text/,xmlDoc.getElementsByTagName("moduleItem-Programs")[0].childNodes[i].childNodes[9].childNodes[0].nodeValue) //替换元素文本
-                afterTxt=afterTxt.replace(/This is a test Title/,xmlDoc.getElementsByTagName("moduleItem-Programs")[0].childNodes[i].childNodes[7].childNodes[0].nodeValue) //替换元素标题
-                afterTxt=afterTxt.replace(/images\/background\/03.jpg/,xmlDoc.getElementsByTagName("moduleItem-Programs")[0].childNodes[i].childNodes[3].childNodes[0].nodeValue) //替换元素图片
-                afterTxt=afterTxt.replace(/index\.html/g,xmlDoc.getElementsByTagName("moduleItem-Programs")[0].childNodes[i].childNodes[1].childNodes[0].nodeValue) //替换元素跳转网页路径
-                afterTxt=afterTxt.replace(/left: -20%/,"left: " + xmlDoc.getElementsByTagName("moduleItem-Programs")[0].childNodes[i].childNodes[5].childNodes[0].nodeValue) //替换元素图片左偏移程度
+            for (let i=0;i<itemMaxNew_Programs.length;i++){
+                let afterTxt=originItemLoadTxt.replace(/This is a test Text/,itemMaxNew_Programs[i].children[4].textContent) //替换元素文本
+                afterTxt=afterTxt.replace(/This is a test Title/,itemMaxNew_Programs[i].children[3].textContent) //替换元素标题
+                afterTxt=afterTxt.replace(/images\/background\/03.jpg/,itemMaxNew_Programs[i].children[1].textContent) //替换元素图片
+                afterTxt=afterTxt.replace(/index\.html/g,itemMaxNew_Programs[i].children[0].textContent) //替换元素跳转网页路径
+                afterTxt=afterTxt.replace(/left: -20%/,"left: " + itemMaxNew_Programs[i].children[2].textContent) //替换元素图片左偏移程度
 
                 if (itemMainRow_Programs.childNodes.length<5){ //限制主页面显示元素最大数量
                     itemMainRow_Programs.innerHTML+=afterTxt
                 }
             } //遍历文件添加软件分享元素*/
-            for (let i=1;i<itemMaxNew_imageShare.length-1;i=i+2){
-                let afterTxt=originItemLoadTxt.replace(/This is a test Text/,xmlDoc.getElementsByTagName("moduleItem-tools")[0].childNodes[i].childNodes[9].childNodes[0].nodeValue) //替换元素文本
-                afterTxt=afterTxt.replace(/This is a test Title/,xmlDoc.getElementsByTagName("moduleItem-tools")[0].childNodes[i].childNodes[7].childNodes[0].nodeValue) //替换元素标题
-                afterTxt=afterTxt.replace(/images\/background\/03.jpg/,xmlDoc.getElementsByTagName("moduleItem-tools")[0].childNodes[i].childNodes[3].childNodes[0].nodeValue) //替换元素图片
-                afterTxt=afterTxt.replace(/index\.html/g,xmlDoc.getElementsByTagName("moduleItem-tools")[0].childNodes[i].childNodes[1].childNodes[0].nodeValue) //替换元素跳转网页路径
-                afterTxt=afterTxt.replace(/left: -20%/,"left: " + xmlDoc.getElementsByTagName("moduleItem-tools")[0].childNodes[i].childNodes[5].childNodes[0].nodeValue) //替换元素图片左偏移程度
+            for (let i=0;i<itemMaxNew_imageShare.length;i++){
+                let afterTxt=originItemLoadTxt.replace(/This is a test Text/,itemMaxNew_imageShare[i].children[4].textContent) //替换元素文本
+                afterTxt=afterTxt.replace(/This is a test Title/,itemMaxNew_imageShare[i].children[3].textContent) //替换元素标题
+                afterTxt=afterTxt.replace(/images\/background\/03.jpg/,itemMaxNew_imageShare[i].children[1].textContent) //替换元素图片
+                afterTxt=afterTxt.replace(/index\.html/g,itemMaxNew_imageShare[i].children[0].textContent) //替换元素跳转网页路径
+                afterTxt=afterTxt.replace(/left: -20%/,"left: " + itemMaxNew_imageShare[i].children[2].textContent) //替换元素图片左偏移程度
 
                 if (itemMainRow_tools.childNodes.length<5){ //限制主页面显示元素最大数量
                     itemMainRow_tools.innerHTML+=afterTxt

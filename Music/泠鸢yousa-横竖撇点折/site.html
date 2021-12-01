@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>null</title>
+    <style type="text/css">
+        body{
+            margin:0;
+            font-size: 20px;
+            font-family: "Microsoft YaHei",sans-serif;
+            color: white;
+            background-color: #202020;
+        }
+    </style>
+
+    <link rel="icon" href="../../images/box_alpha_cut.png">
+
+    <link rel="stylesheet" type="text/css" href="../../css/mainBar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/indexBackGround.css">
+    <link rel="stylesheet" type="text/css" href="../../css/fontsImport.css">
+    <link rel="stylesheet" type="text/css" href="../../css/indexContainer.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/musicHTML/musicIndex.css">
+    <link rel="stylesheet" type="text/css" href="../../css/musicHTML/musicBody.css">
+    <link rel="stylesheet" type="text/css" href="../../css/musicHTML/debug.css">
+
+    <script src="../../scripts/mainBar/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
+    <script src="../../scripts/mainBar/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
+    <script src="../../scripts/mainBar/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
+</head>
+<body>
+<div class="container" id="main">
+    <div id="mainBarContainerBox" class="mainBarContainer">
+        <div class="mainBarStyle" id="mainBar">
+            <div id="mainBarImageContainer" class="mainBarImageContainer">
+                <div id="mainBarImageBox" class="mainBarImageBox">
+                    <a href="../../index.html"><img src="../../images/box_alpha_cut.png" style="height: 93px" alt="图片加载失败"></a>
+                </div>
+                <div class="mainBarImageText" id="mainBarImageText">
+                    <a href="../../index.html"><img src="../../images/text_alpha_hd.png" style="height: 135px" alt="图片加载失败"></a>
+                </div>
+            </div>
+            <div id="mainBarText">
+                <ul>
+
+                </ul>
+            </div>
+            <script src="../../scripts/mainBar/hrefAutoAdd/mainBarHrefAutoAddChild.js"></script> <!--自动添加导航条内容-->
+        </div>
+    </div>
+    <div id="backGroundContainerBox" class="backGroundContainerBoxMedia">
+        <div id="backGroundMain"
+             style="height: 400px;
+             background-image: url('image.jpg');
+             background-repeat: no-repeat;
+             background-position: center;
+             background-size: 1526px;
+             position: fixed;
+             width: 100%;
+             top: 0;
+             z-index: -1;filter: blur(3px)">
+            <div id="backGroundBlock"
+                 style="background-image: linear-gradient(to right,
+                 rgba(0,0,0,0.9)5%,
+                 rgba(0,0,0,0.7)35%,
+                 rgba(0,0,0,0.56)100%);
+                 height: 400px"></div>
+
+        </div>
+        <div class="musicIndexContainer">
+            <div class="musicIndexItemContainer">
+                <div class="musicIndexItemTextContainer">
+                    <div class="musicIndexItemTextTitleContainer">
+                        <div class="musicIndexItemTextTitle" id="musicIndexTextTitle">null</div>
+                        <div class="musicIndexItemTextArtist" id="musicIndexTextArtist">null</div>
+                    </div>
+                    <div class="musicIndexItemTextInfoContainer" id="musicIndexTextInfo">null</div>
+                </div>
+                <div class="musicIndexItemImageContainer">
+                    <img src="imageS.jpg" class="musicIndexItemImage" alt="加载图片失败">
+                </div>
+                <script src="../../scripts/musicHTMLScripts/musicLayoutAuto.js"></script> <!--自动设置布局-->
+            </div>
+        </div>
+    </div>
+
+    <div id="secondaryContainer" class="secondaryStyle">
+        <div class="musicBodyContainer">
+            <div class="musicBodyRemindText">点击播放按钮播放</div>
+            <div id="musicBodyMusicControlBar" class="musicBodyMusicControlBar">
+                <audio controls="controls">
+                    <source src="media.mp3">
+                </audio>
+            </div>
+            <div id="timeLineText">123</div>
+            <script src="../../scripts/musicHTMLScripts/musicTimeGet.js"></script>
+
+            <div id="musicBodyLyricContainer">
+                <div>
+                    <div id="musicLyricTextContainer">
+                        <div id="musicLyricOriginText" style="display: none"></div>
+                        <div id="musicLyricOriginTranslateText" style="display: none"></div>
+                        <div id="musicLyricMainText"></div>
+
+                    </div>
+                    <div id="debugTextContainer" class="debugTextContainer"  style="display: none">
+                        <div>[debug文本]</div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">歌词整体偏移时间：</div>
+                            <div id="lyricTimeOffset" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">歌词最大行：</div>
+                            <div id="maxLyricColumn" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前所在行：</div>
+                            <div id="nowLyricColumn" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前歌词：</div>
+                            <div id="nowLyricText" class="debugLyricText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前行最大字数：</div>
+                            <div id="nowLyricColumnMaxWordAmount" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前所在字：</div>
+                            <div id="nowLyricWordText" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前字出现时间：</div>
+                            <div id="nowLyricWordTime" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">下个字：</div>
+                            <div id="nextLyricWord" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">下个字出现时间：</div>
+                            <div id="nextLyricWordTime" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">下个字与上个字相差时间：</div>
+                            <div id="lyricWordTimeDifference" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">下个字与上个字相差时间(实时)：</div>
+                            <div id="lyricWordTimeDiffReal" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前行div所在Y坐标(容器内)：</div>
+                            <div id="nowLyricLinePosition" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前歌词框滚动条所在坐标：</div>
+                            <div id="nowLyricContainerScrollContainer" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">当前歌词框容器最大高度：</div>
+                            <div id="nowLyricContainerMaxHeight" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">计时器（用于复原自动滚动歌词）</div>
+                            <div id="delayTimeScrollNow" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">是否正在播放：</div>
+                            <div id="isPlaying" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">是否禁止自动滚动：</div>
+                            <div id="isDisableAutoScroll" class="debugText"></div>
+                        </div>
+                        <div class="debugDisplayFlex">
+                            <div class="debugTextTitle">是否正在自动滚动：</div>
+                            <div id="isAutoScroll" class="debugText"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="../../scripts/musicHTMLScripts/musicLyricGet.js"></script>
+        </div>
+        <div class="subTextContainer">
+            <div id="subText">
+                网页制作: kri_YamiHikari<br>
+                QQ: 1906178267
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,13 +1,15 @@
 function main() {
     let xmlHttpLyric=new XMLHttpRequest()
     let xmlHttpMusicInfo=new XMLHttpRequest()
+    let xmlHttpLyricTS=new XMLHttpRequest()
 
     //调用元素
     let musicLyricOriginText=document.getElementById('musicLyricOriginText')
+    let musicLyricOriginTranslateText=document.getElementById('musicLyricOriginTranslateText')
     let musicLyricMainText=document.getElementById('musicLyricMainText')
     let musicBodyMusicControlBar=document.getElementById('musicBodyMusicControlBar')
 
-    let timeText,text="" //时间线文本 歌词原文本
+    let timeText,text,translateText="" //时间线文本 歌词原文本 翻译原文本
     let lineLyricText=""
     let cutLine,cutLineLyric,cutLineTime="" //分割歌词为一行行 行中分割歌词单字 行中分割单字对应时间
     let i,c,n,timeDiff,nextWordTime=0 //最大行 当前行 当前字 下个字与上个字的时间相差值
@@ -17,38 +19,15 @@ function main() {
 
     let delayTimeScroll=0 //延迟执行
     let isPositionEnd=false,isAutoScroll=false,disableAutoScroll=false
+    let isTranslate=false //是否有歌词翻译
 
     let nowLyricLineTopPosition,lyricLineScrollOffset=0
-    let newTimeLine,newTextLine,mergeLine,newLine="" //转为div元素 新时间行 新歌词行 合并再次替换部分内容 完整行
+    let newTimeLine,newTextLine,newTSLine,mergeLine,newLine="" //转为div元素 新时间行 新歌词行 合并再次替换部分内容 完整行
 
-    let lyricTextNormal="color:white;opacity: 93%;cursor: pointer" //默认字体颜色
+    let lyricTextNormal="color:white;opacity: 93%;cursor: pointer;min-width: 10px;white-space: pre" //默认字体颜色
     let color=[252,254,116] //着色歌词字体颜色
     let colorText="rgb("+color[0]+","+color[1]+","+color[2]+")"
-    let lyricTextRender="color:"+colorText+";opacity: 93%;cursor: pointer"
-
-    xmlHttpLyric.onreadystatechange=function () { //获取歌词源文件
-        if (this.readyState===4 && this.status===200){
-            text=this.responseText
-            setInterval(timeTextFix,1) //获取播放时间 转换文本格式
-            setInterval(setFontColor,30) //实时修改字体颜色
-
-            setInterval(getLyricColumn,1) //获取歌词所在行
-
-            setInterval(realTimeDiff,1) //实时获取字相差时间
-
-            setInterval(compare,40)
-            setInterval(resetLyricContainerHeight,40)//歌词框高度自适应
-            setInterval(delaySecond,1000) //定时器
-            setInterval(scrollAnimation,10)
-
-            initLyricText() //初始化歌词文本 载入到页面
-            tapJumpColumn() //点击某行歌词 时间跳转到对应行首字开始播放
-            xmlHttpMusicInfo.open("get","info.xml",true)
-            xmlHttpMusicInfo.send()
-        }
-    }
-    xmlHttpLyric.open("get","lyric.lrc",true)
-    xmlHttpLyric.send()
+    let lyricTextRender="color:"+colorText+";opacity: 93%;cursor: pointer;min-width: 10px;white-space: pre"
 
     xmlHttpMusicInfo.onreadystatechange=function () { //修改页面说明 修改歌词时间偏移
         if (this.readyState===4 && this.status===200){
@@ -63,7 +42,53 @@ function main() {
             musicInfo.innerHTML=xml.getElementsByTagName("text")[0].childNodes[0].nodeValue
             offsetTime=Number(xml.getElementsByTagName("offset")[0].childNodes[0].nodeValue)
             document.title=xml.getElementsByTagName("artist")[0].childNodes[0].nodeValue+" - "+xml.getElementsByTagName("title")[0].childNodes[0].nodeValue
+            isTranslate=xml.getElementsByTagName("translate")[0].childNodes[0].nodeValue
+            if (isTranslate==="true"){
+                isTranslate=true
+            }else {
+                isTranslate=false
+            }
+
+            xmlHttpLyric.open("get","lyric.lrc",true)
+            xmlHttpLyric.send()
         }
+    }
+    xmlHttpLyricTS.onreadystatechange=function(){
+        if (this.readyState===4 && this.status===200){
+            translateText=this.responseText
+            musicLyricOriginTranslateText.innerHTML=translateText
+            init()
+        }
+    }
+    xmlHttpLyric.onreadystatechange=function () { //获取歌词源文件
+        if (this.readyState===4 && this.status===200){
+            text=this.responseText
+            if (isTranslate===true){
+                xmlHttpLyricTS.open("get","lyricTS.txt",true)
+                xmlHttpLyricTS.send()
+            }else {
+                init()
+            }
+        }
+    }
+    xmlHttpMusicInfo.open("get","info.xml",true)
+    xmlHttpMusicInfo.send()
+
+    function init() {
+        setInterval(timeTextFix,1) //获取播放时间 转换文本格式
+        setInterval(setFontColor,30) //实时修改字体颜色
+
+        setInterval(getLyricColumn,1) //获取歌词所在行
+
+        setInterval(realTimeDiff,1) //实时获取字相差时间
+
+        setInterval(compare,20)
+        setInterval(resetLyricContainerHeight,40)//歌词框高度自适应
+        setInterval(delaySecond,1000) //定时器
+        setInterval(scrollAnimation,20)
+
+        initLyricText() //初始化歌词文本 载入到页面
+        tapJumpColumn() //点击某行歌词 时间跳转到对应行首字开始播放
     }
 
     function timeTextFix() { //获取歌曲播放时间并转换格式供正则表达式匹配事件
@@ -72,7 +97,7 @@ function main() {
     }
     function delaySecond() {
         delayTimeScroll++
-        if (delayTimeScroll>=5){
+        if (delayTimeScroll>=3){
             disableAutoScroll=false
         }
     }
@@ -103,12 +128,17 @@ function main() {
 
         for (i=0;i<musicLyricOriginText.getElementsByTagName("div").length;i++){
             cutLine=musicLyricOriginText.getElementsByTagName("div")[i].innerHTML.replace(/[0-9].*?\[/g,"<div>"+"$&"+"</div>")
-            cutLineLyric=cutLine.replace(/[0-9].*?]|\[/g,"").replace(/<div>/g,"<div style='"+lyricTextNormal+"'>")
+            cutLineLyric=cutLine.replace(/[0-9][0-9]:[0-9][0-9]\.[0-9][0-9]|\[|]/g,"").replace(/<div>/g,"<div style='"+lyricTextNormal+"'>")
             cutLineTime=cutLine.replace(/].*?\[|\[|]/g,"").replace(/<div>|<\/div>/g,"").replace(/[0-9][0-9].*?\.[0-9][0-9]/g,"<div>"+"$&"+"</div>")
 
             newTimeLine=cutLineTime.replace(/.*<\/div>/g,"<div class='newTimeLine'>"+"$&"+"</div>") //时间行初始样式 隐藏 布局一定要是flex
-            newTextLine=cutLineLyric.replace(/.*<\/div>/g,"<div class='newTextLine'>"+"$&"+"</div>") //歌词初始样式 布局一定要是flex
-            mergeLine=newTimeLine+newTextLine
+            newTextLine=cutLineLyric.replace(/.*<\/div>/g,"<div class='newTextLine'>"+"$&"+"</div>")//歌词初始样式 布局一定要是flex
+            if (isTranslate===true){
+                newTSLine=musicLyricOriginTranslateText.getElementsByTagName("div")[i].innerHTML.replace(/.*/,"<div class='newTextTSLine'><div style='cursor: pointer'>"+"$&"+"</div></div>")
+                mergeLine=newTimeLine+newTextLine+newTSLine
+            }else{
+                mergeLine=newTimeLine+newTextLine
+            }
             newLine=mergeLine.replace(/.*<\/div>/g,"<div class='newLine'>"+"$&"+"</div>")
 
             musicLyricMainText.innerHTML+=newLine
@@ -133,7 +163,7 @@ function main() {
     function setFontColor() { //设置歌词字体颜色
         if (playing===true){
             try{
-                musicLyricMainText.children[c].children[1].getElementsByTagName("div")[n].setAttribute('style',"background: -webkit-linear-gradient(left,"+colorText+" "+wordRender+"%,white 0%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-text-stroke-width: 0.56px;-webkit-text-stroke-color: rgba(255,255,255,0.1);cursor: pointer")
+                musicLyricMainText.children[c].children[1].getElementsByTagName("div")[n].setAttribute('style',"background: -webkit-linear-gradient(left,"+colorText+" "+wordRender+"%,white 0%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-text-stroke-width: 0.56px;-webkit-text-stroke-color: rgba(255,255,255,0.1);cursor: pointer;min-width: 10px;white-space: pre")
                 try{
                     for (let q=0;q<=n-1;q++){
                         //musicLyricMainText.children[c].children[1].getElementsByTagName("div")[q].setAttribute('style',"background: -webkit-linear-gradient(left,#bcfe74 "+100+"%,white 0%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-text-stroke-width: 0.56px;-webkit-text-stroke-color: rgba(255,255,255,0.1);cursor: pointer")
@@ -258,10 +288,11 @@ function main() {
         }
         //是否正在自动滚动
         try{
-            document.getElementById('isAutoScroll').innerHTML=isAutoScroll
+            document.getElementById('isAutoScroll').innerHTML=isAutoScroll + " "+isTranslate
         }catch (e) {
             document.getElementById('isAutoScroll').innerHTML="null"
         }
+
     }
     musicBodyMusicControlBar.getElementsByTagName("audio")[0].onplaying=function () {
         playing=true
@@ -301,6 +332,14 @@ function main() {
                     musicBodyMusicControlBar.getElementsByTagName("audio")[0].play().then()
                     disableAutoScroll=false //在自动滚动禁用期间如果点击歌词导致跳转则直接解开滚动禁用
                 }
+                //翻译也可跳转
+                if (isTranslate===true){
+                    musicLyricMainText.children[b].children[2].getElementsByTagName("div")[0].onclick=function () {
+                        musicBodyMusicControlBar.getElementsByTagName("audio")[0].currentTime=firstTime
+                        musicBodyMusicControlBar.getElementsByTagName("audio")[0].play().then()
+                        disableAutoScroll=false //在自动滚动禁用期间如果点击歌词导致跳转则直接解开滚动禁用
+                    }
+                }
             }
         }
     }
@@ -323,7 +362,11 @@ function main() {
     function divPosition() { //获取居中位置
         try{
             nowLyricLineTopPosition=musicLyricMainText.children[c].offsetTop
-            lyricLineScrollOffset=nowLyricLineTopPosition-134-Number(musicLyricMainText.getBoundingClientRect().height/2).toFixed(0)+27
+            if (isTranslate===true){
+                lyricLineScrollOffset=nowLyricLineTopPosition-134-Number(musicLyricMainText.getBoundingClientRect().height/2).toFixed(0)+27+13
+            }else {
+                lyricLineScrollOffset=nowLyricLineTopPosition-134-Number(musicLyricMainText.getBoundingClientRect().height/2).toFixed(0)+27
+            }
             //musicLyricMainText.scrollTo(0,lyricLineScrollOffset)
         }catch (e) {
 
@@ -357,17 +400,17 @@ function main() {
 
         if (disableAutoScroll===false && playing===true){ //如果没有禁止自动滚动 并且处于播放状态
             if (lyricLineScrollOffset<0 && musicLyricMainText.scrollTop!==0){ //特殊情况 如果居中值是负数则直接滚动到首
-                let number2=Math.ceil(musicLyricMainText.scrollTop/0.3/1000*10)
+                let number2=Math.ceil(musicLyricMainText.scrollTop/0.3/1000*20)
                 musicLyricMainText.scrollBy(0,-number2)
                 isAutoScroll=true
             }else if (musicLyricMainText.scrollTop<lyricLineScrollOffset && lyricLineScrollOffset>0 && isPositionEnd===false){ //歌词向下滚动 特殊情况 如果到底不继续向下滚动
                 let number1=lyricLineScrollOffset-musicLyricMainText.scrollTop
-                let number2=Math.ceil(number1/0.3/1000*10)
+                let number2=Math.ceil(number1/0.3/1000*20)
                 musicLyricMainText.scrollBy(0,number2)
                 isAutoScroll=true
             }else if (musicLyricMainText.scrollTop>lyricLineScrollOffset && lyricLineScrollOffset>0){ //歌词向上滚动
                 let number1=musicLyricMainText.scrollTop-lyricLineScrollOffset
-                let number2=Math.ceil(number1/0.3/1000*10)
+                let number2=Math.ceil(number1/0.3/1000*20)
                 musicLyricMainText.scrollBy(0,-number2)
                 isAutoScroll=true
             }else{ //如果以上条件都不成立则判断自动滚动结束

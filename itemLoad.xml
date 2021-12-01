@@ -7,13 +7,13 @@
 	<!--详情查看https://www.w3school.com.cn/xml/xml_syntax.asp-->
     <moduleItem-Media>
         <item>
-            <htmlSrc>Music/YOASOBI-怪物/site.html</htmlSrc>
-            <imageSrc>Music/YOASOBI-怪物/image.jpg</imageSrc>
-            <imageLeft>-4%</imageLeft>
-            <title>怪物</title>
+            <htmlSrc>Music/泠鸢yousa-横竖撇点折/site.html</htmlSrc>
+            <imageSrc>Music/泠鸢yousa-横竖撇点折/image.jpg</imageSrc>
+            <imageLeft>-6%</imageLeft>
+            <title>横竖撇点折</title>
             <text>
-                YOASOBI &lt;br&gt;
-                BEASTARS 第二季片头曲
+                泠鸢yousa &lt;br&gt;
+                2020拜年祭-首翻
             </text>
         </item>
         <item>
@@ -45,6 +45,26 @@
                 幾田りら &lt;br&gt;
                 加藤ミリヤ　TRIBUTE ALBUM&lt;br&gt;
                 『INSPIRE』
+            </text>
+        </item>
+        <item>
+            <htmlSrc>Music/Lauv-2021/site.html</htmlSrc>
+            <imageSrc>Music/Lauv-2021/image.jpg</imageSrc>
+            <imageLeft>-1%</imageLeft>
+            <title>2021</title>
+            <text>
+                Lauv &lt;br&gt;
+                2021
+            </text>
+        </item>
+        <item>
+            <htmlSrc>Music/YOASOBI-怪物/site.html</htmlSrc>
+            <imageSrc>Music/YOASOBI-怪物/image.jpg</imageSrc>
+            <imageLeft>-4%</imageLeft>
+            <title>怪物</title>
+            <text>
+                YOASOBI &lt;br&gt;
+                BEASTARS 第二季片头曲
             </text>
         </item>
     </moduleItem-Media>
