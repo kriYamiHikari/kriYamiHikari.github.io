@@ -24,10 +24,10 @@ function main() {
     let nowLyricLineTopPosition,lyricLineScrollOffset=0
     let newTimeLine,newTextLine,newTSLine,mergeLine,newLine="" //转为div元素 新时间行 新歌词行 合并再次替换部分内容 完整行
 
-    let lyricTextNormal="color:white;opacity: 93%;cursor: pointer;min-width: 10px;white-space: pre" //默认字体颜色
+    let lyricTextNormal="color:white;opacity: 93%;cursor: pointer;white-space: pre" //默认字体颜色
     let color=[252,254,116] //着色歌词字体颜色
     let colorText="rgb("+color[0]+","+color[1]+","+color[2]+")"
-    let lyricTextRender="color:"+colorText+";opacity: 93%;cursor: pointer;min-width: 10px;white-space: pre"
+    let lyricTextRender="color:"+colorText+";opacity: 93%;cursor: pointer;white-space: pre"
 
     xmlHttpMusicInfo.onreadystatechange=function () { //修改页面说明 修改歌词时间偏移
         if (this.readyState===4 && this.status===200){
@@ -163,7 +163,7 @@ function main() {
     function setFontColor() { //设置歌词字体颜色
         if (playing===true){
             try{
-                musicLyricMainText.children[c].children[1].getElementsByTagName("div")[n].setAttribute('style',"background: -webkit-linear-gradient(left,"+colorText+" "+wordRender+"%,white 0%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-text-stroke-width: 0.56px;-webkit-text-stroke-color: rgba(255,255,255,0.1);cursor: pointer;min-width: 10px;white-space: pre")
+                musicLyricMainText.children[c].children[1].getElementsByTagName("div")[n].setAttribute('style',"background: -webkit-linear-gradient(left,"+colorText+" "+wordRender+"%,white 0%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-text-stroke-width: 0.56px;-webkit-text-stroke-color: rgba(255,255,255,0.1);cursor: pointer;white-space: pre")
                 try{
                     for (let q=0;q<=n-1;q++){
                         //musicLyricMainText.children[c].children[1].getElementsByTagName("div")[q].setAttribute('style',"background: -webkit-linear-gradient(left,#bcfe74 "+100+"%,white 0%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-text-stroke-width: 0.56px;-webkit-text-stroke-color: rgba(255,255,255,0.1);cursor: pointer")
@@ -400,17 +400,17 @@ function main() {
 
         if (disableAutoScroll===false && playing===true){ //如果没有禁止自动滚动 并且处于播放状态
             if (lyricLineScrollOffset<0 && musicLyricMainText.scrollTop!==0){ //特殊情况 如果居中值是负数则直接滚动到首
-                let number2=Math.ceil(musicLyricMainText.scrollTop/0.3/1000*20)
+                let number2=Math.round(musicLyricMainText.scrollTop/0.3/1000*20)
                 musicLyricMainText.scrollBy(0,-number2)
                 isAutoScroll=true
             }else if (musicLyricMainText.scrollTop<lyricLineScrollOffset && lyricLineScrollOffset>0 && isPositionEnd===false){ //歌词向下滚动 特殊情况 如果到底不继续向下滚动
                 let number1=lyricLineScrollOffset-musicLyricMainText.scrollTop
-                let number2=Math.ceil(number1/0.3/1000*20)
+                let number2=Math.round(number1/0.3/1000*20)
                 musicLyricMainText.scrollBy(0,number2)
                 isAutoScroll=true
             }else if (musicLyricMainText.scrollTop>lyricLineScrollOffset && lyricLineScrollOffset>0){ //歌词向上滚动
                 let number1=musicLyricMainText.scrollTop-lyricLineScrollOffset
-                let number2=Math.ceil(number1/0.3/1000*20)
+                let number2=Math.round(number1/0.3/1000*20)
                 musicLyricMainText.scrollBy(0,-number2)
                 isAutoScroll=true
             }else{ //如果以上条件都不成立则判断自动滚动结束
