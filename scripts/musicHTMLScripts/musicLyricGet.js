@@ -404,20 +404,14 @@ function main() {
                 musicLyricMainText.scrollBy(0,-number2)
                 isAutoScroll=true
             }else if (Math.trunc(musicLyricMainText.scrollTop)<lyricLineScrollOffset && lyricLineScrollOffset>0 && isPositionEnd===false){ //歌词向下滚动 特殊情况 如果到底不继续向下滚动
-                let number1=lyricLineScrollOffset-musicLyricMainText.scrollTop
+                let number1=lyricLineScrollOffset-Math.trunc(musicLyricMainText.scrollTop)
                 let number2=Math.round(number1/0.3/1000*20)
-                musicLyricMainText.scrollBy(0,number2)
-                if (musicLyricMainText.scrollTop>=number2 && musicLyricMainText!==lyricLineScrollOffset){
-                    musicLyricMainText.scrollBy(0,1)
-                }
+                musicLyricMainText.scrollBy(0,number2+1)
                 isAutoScroll=true
             }else if (Math.trunc(musicLyricMainText.scrollTop)>lyricLineScrollOffset && lyricLineScrollOffset>0){ //歌词向上滚动
                 let number1=musicLyricMainText.scrollTop-lyricLineScrollOffset
                 let number2=Math.round(number1/0.3/1000*20)
-                musicLyricMainText.scrollBy(0,-number2)
-                if (musicLyricMainText.scrollTop>=number2 && musicLyricMainText!==lyricLineScrollOffset){
-                    musicLyricMainText.scrollBy(0,-1)
-                }
+                musicLyricMainText.scrollBy(0,-number2-1)
                 isAutoScroll=true
             }else{ //如果以上条件都不成立则判断自动滚动结束
                 isAutoScroll=false
