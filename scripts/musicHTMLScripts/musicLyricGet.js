@@ -392,7 +392,7 @@ function main() {
     }
     function scrollAnimation() { //自动滚动 动画效果
         //判断滚动条是否到了最底处
-        if (musicLyricMainText.scrollTop===musicLyricMainText.scrollHeight-musicLyricMainText.getBoundingClientRect().height){
+        if (Math.ceil(musicLyricMainText.scrollTop)>=musicLyricMainText.scrollHeight-Math.ceil(musicLyricMainText.getBoundingClientRect().height)){
             isPositionEnd=true
         }else {
             isPositionEnd=false
@@ -403,15 +403,21 @@ function main() {
                 let number2=Math.round(musicLyricMainText.scrollTop/0.3/1000*20)
                 musicLyricMainText.scrollBy(0,-number2)
                 isAutoScroll=true
-            }else if (musicLyricMainText.scrollTop<lyricLineScrollOffset && lyricLineScrollOffset>0 && isPositionEnd===false){ //歌词向下滚动 特殊情况 如果到底不继续向下滚动
+            }else if (Math.trunc(musicLyricMainText.scrollTop)<lyricLineScrollOffset && lyricLineScrollOffset>0 && isPositionEnd===false){ //歌词向下滚动 特殊情况 如果到底不继续向下滚动
                 let number1=lyricLineScrollOffset-musicLyricMainText.scrollTop
                 let number2=Math.round(number1/0.3/1000*20)
                 musicLyricMainText.scrollBy(0,number2)
+                if (musicLyricMainText.scrollTop>=number2 && musicLyricMainText!==lyricLineScrollOffset){
+                    musicLyricMainText.scrollBy(0,1)
+                }
                 isAutoScroll=true
-            }else if (musicLyricMainText.scrollTop>lyricLineScrollOffset && lyricLineScrollOffset>0){ //歌词向上滚动
+            }else if (Math.trunc(musicLyricMainText.scrollTop)>lyricLineScrollOffset && lyricLineScrollOffset>0){ //歌词向上滚动
                 let number1=musicLyricMainText.scrollTop-lyricLineScrollOffset
                 let number2=Math.round(number1/0.3/1000*20)
                 musicLyricMainText.scrollBy(0,-number2)
+                if (musicLyricMainText.scrollTop>=number2 && musicLyricMainText!==lyricLineScrollOffset){
+                    musicLyricMainText.scrollBy(0,-1)
+                }
                 isAutoScroll=true
             }else{ //如果以上条件都不成立则判断自动滚动结束
                 isAutoScroll=false
