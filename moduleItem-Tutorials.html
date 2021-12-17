@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
@@ -21,10 +21,8 @@
     <link rel="stylesheet" type="text/css" href="css/fontsImport.css">
     <link rel="stylesheet" type="text/css" href="css/indexContainer.css">
 
-    <script src="scripts/jquery-3.6.0.min.js"></script>
-    <script src="scripts/mainBar/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
-    <script src="scripts/mainBar/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
-    <script src="scripts/mainBar/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
+    <link rel="stylesheet" type="text/css" href="css/topMenu.css">
+
 </head>
 <body>
 <div class="container" id="main">
@@ -46,10 +44,13 @@
             <script src="scripts/mainBar/hrefAutoAdd/mainBarHrefAutoAddIndex.js"></script> <!--自动添加导航条内容-->
         </div>
     </div>
+
+    <script src="scripts/mainBar/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
+    <script src="scripts/mainBar/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
+
     <div id="backGroundContainerBox" class="backGroundContainerBox">
         <div id="backGroundMain"
              style="height: 250px;
-             background-image: url('images/background/01.png');
              background-repeat: no-repeat;
              background-position: center;
              background-size: 1526px;
@@ -57,8 +58,12 @@
              width: 100%;
              top: 0;
              z-index: -1;filter: blur(6px)">
-            <div id="backGroundBlock" style="background: rgba(40,40,40,0.2);height: 550px"></div>
+            <div id="backGroundBlock" style="background: rgba(40,40,40,0.2);height: 390px"></div>
         </div>
+
+        <script src="scripts/mainBar/randomBackgroundImage.js"></script>
+        <script src="scripts/mainBar/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
+
         <div id="backGroundTextContainer" class="backGroundTextContainer-Other">
             <div id="backGroundTitle" class="backGroundTitle-Other">
                 专业教程
@@ -67,16 +72,68 @@
     </div>
 
     <div id="secondaryContainer" class="secondaryStyle">
+
+
         <div id="moduleItem-Media">
             <div class="itemContainer">
                 <div class="itemMainGrid">
+                    <div class="topMenuContainer">
+                        <div style="display: flex">
+                            <div class="dropMenuContainer">
+                            <button class="dropMenuButton" id="sortTypeButton">
+                                <span>排序方式</span>
+                                <span class="buttonCorner"></span>
+                            </button>
+                            <div class="dropMenuMainContainer-Hidden">
+                                <div class="dropMenuMainTextContainer">
+                                    <div class="dropMenuMainText">添加时间</div>
+                                    <div class="dropMenuMainText">项目名称</div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="dropMenuContainer">
+                                <button class="dropMenuButton" id="sortOrderButton">
+                                    <span>排列顺序</span>
+                                    <span class="buttonCorner"></span>
+                                </button>
+                                <div class="dropMenuMainContainer-Hidden">
+                                    <div class="dropMenuMainTextContainer">
+                                        <div class="dropMenuMainText">倒序</div>
+                                        <div class="dropMenuMainText">正序</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="searchContainer">
+                            <div class="dropMenuContainer">
+                                <button class="searchTypeButton">
+                                    <span>类型</span>
+                                    <span class="buttonCorner"></span>
+                                </button>
+                                <div class="dropMenuMainContainer-Hidden">
+                                    <div class="dropMenuMainTextContainer">
+                                        <div class="dropMenuMainText">项目名称</div>
+                                        <div class="dropMenuMainText">添加时间</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="searchInputContainer">
+                                <label>
+                                    <input type="text" placeholder="请输入搜索内容" class="searchTextarea" id="searchTextarea">
+                                </label>
+                                <button class="searchButton">
+                                    <i class="searchIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row" id="itemMainRow-Tutorials">
                         <script src="scripts/itemGET/itemGet-moduleItem-Tutorials.js"></script> <!--页面元素自动导入-->
-                        <div class="itemMain" style="display: block">
+                        <div class="itemMain">
                             <article class="postItemStyle">
                                 <div class="entry-media">
                                     <a href="index.html" class="hrefNoEffect">
-                                        <img style="left: -20%" class="imageLoad" src="images/background/03.jpg" alt="图片加载失败">
+                                        <img style="left: -20%" class="imageLoad" src="images/background/default.jpg" alt="图片加载失败">
                                     </a>
                                 </div>
                                 <div class="entry-text">
@@ -87,10 +144,16 @@
                                             </h2>
                                         </a>
                                     </header>
-                                    <div class="itemText" style="white-space: normal;overflow: auto">
+                                    <div class="itemText">
                                         This is a origin item.<br>
                                         If you see this text it means the page is not loaded properly.<br>
                                         Please try to reload this page!
+                                    </div>
+                                    <div class="itemSubContainer">
+                                        <div>
+                                            <img src="images/clock.png" alt="图片加载失败！" class="itemSubImg">
+                                        </div>
+                                        <div class="itemSubText">null</div>
                                     </div>
                                 </div>
                             </article>
@@ -101,8 +164,10 @@
         </div>
 
         <div class="subTextContainer">
-            <div>网页制作: kri_YamiHikari</div>
-            <div>QQ: 1906178267</div>
+            <div id="subText">
+                网页制作: kri_YamiHikari<br>
+                QQ: 1906178267
+            </div>
         </div>
     </div>
 </div>

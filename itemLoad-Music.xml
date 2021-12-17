@@ -9,8 +9,6 @@
         <artists>
             <YOASOBI>
                 <item>
-                    <htmlSrc>Music/YOASOBI-怪物/site.html</htmlSrc>
-                    <imageSrc>Music/YOASOBI-怪物/image.jpg</imageSrc>
                     <imageLeft>-4%</imageLeft>
                     <title>怪物</title>
                     <text>
@@ -18,13 +16,32 @@
                         BEASTARS 第二季片头曲
                     </text>
                     <language>Japanese</language>
+                    <date>2021-11-04 10:17</date>
+                </item>
+                <item>
+                    <imageLeft>-4%</imageLeft>
+                    <title>群青</title>
+                    <text>
+                        YOASOBI &lt;br&gt;
+                        BOURBON Alfort巧克力广告主题曲
+                    </text>
+                    <language>Japanese</language>
+                    <date>2021-12-06 14:48</date>
+                </item>
+                <item>
+                    <imageLeft>-4%</imageLeft>
+                    <title>夜に駆ける</title>
+                    <text>
+                        YOASOBI &lt;br&gt;
+                        YOASOBI 出道单曲
+                    </text>
+                    <language>Japanese</language>
+                    <date>2021-12-10 02:36</date>
                 </item>
             </YOASOBI>
             <幾田りら>
                 <item>
-                    <htmlSrc>Music/幾田りら-Aitai/site.html</htmlSrc>
-                    <imageSrc>Music/幾田りら-Aitai/image.jpg</imageSrc>
-                    <imageLeft>-22%</imageLeft>
+                    <imageLeft>0%</imageLeft>
                     <title>Aitai</title>
                     <text>
                         幾田りら &lt;br&gt;
@@ -32,12 +49,20 @@
                         『INSPIRE』
                     </text>
                     <language>Japanese</language>
+                    <date>2021-11-24 14:05</date>
+                </item>
+                <item>
+                    <imageLeft>0%</imageLeft>
+                    <title>Answer</title>
+                    <text>
+                        幾田りら &lt;br&gt;
+                    </text>
+                    <language>Japanese</language>
+                    <date>2021-12-10 15:42</date>
                 </item>
             </幾田りら>
             <藤井风>
                 <item>
-                    <htmlSrc>Music/藤井风-きらり/site.html</htmlSrc>
-                    <imageSrc>Music/藤井风-きらり/image.jpg</imageSrc>
                     <imageLeft>-4%</imageLeft>
                     <title>きらり</title>
                     <text>
@@ -45,12 +70,11 @@
                         Honda『VEZEL』CM歌曲
                     </text>
                     <language>Japanese</language>
+                    <date>2021-11-22 02:22</date>
                 </item>
             </藤井风>
             <Overidea>
                 <item>
-                    <htmlSrc>Music/Overidea-カナリアの空/site.html</htmlSrc>
-                    <imageSrc>Music/Overidea-カナリアの空/image.jpg</imageSrc>
                     <imageLeft>-12%</imageLeft>
                     <title>カナリアの空</title>
                     <text>
@@ -58,21 +82,47 @@
                         金糸雀的雾天
                     </text>
                     <language>Japanese</language>
+                    <date>2021-11-22 03:25</date>
                 </item>
             </Overidea>
-            <Overidea>
+            <泠鸢yousa>
                 <item>
-                    <htmlSrc>Music/Overidea-カナリアの空/site.html</htmlSrc>
-                    <imageSrc>Music/Overidea-カナリアの空/image.jpg</imageSrc>
-                    <imageLeft>-12%</imageLeft>
-                    <title>カナリアの空</title>
+                    <imageLeft>-6%</imageLeft>
+                    <title>横竖撇点折</title>
                     <text>
-                        Overidea × Yunoshin &lt;br&gt;
-                        金糸雀的雾天
+                        泠鸢yousa &lt;br&gt;
+                        2020拜年祭-首翻
                     </text>
-                    <language>Japanese</language>
+                    <language>Chinese</language>
+                    <date>2021-12-01 13:42</date>
                 </item>
-            </Overidea>
+            </泠鸢yousa>
+            <Lauv>
+                <item>
+                    <imageLeft>-1%</imageLeft>
+                    <title>2021</title>
+                    <text>
+                        Lauv &lt;br&gt;
+                        2021
+                    </text>
+                    <language>English</language>
+                    <date>2021-12-01 10:07</date>
+                </item>
+            </Lauv>
+            <茶理理理子>
+                <item>
+                    <imageLeft>-3%</imageLeft>
+                    <title>Blessing(世界版)</title>
+                    <text>
+                        茶理理理子 | Tune | Sumashu | MastaH &lt;br&gt;
+                        Kiro | 莲 | Ehmz | Un3h | 이내(Enae) &lt;br&gt;
+                        cheeseman | Paperblossom | 鸟子 | Feysu &lt;br&gt;
+                        Blessing(世界版)
+                    </text>
+                    <language>English</language>
+                    <date>2021-12-10 03:03</date>
+                </item>
+            </茶理理理子>
         </artists>
     </moduleItem-Media>
 </main>

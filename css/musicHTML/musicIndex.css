@@ -7,15 +7,18 @@
     justify-content: space-between;
     padding-top: 20px;
     padding-left: 40px;
-    padding-right: 50px;
+    padding-right: 40px;
 }
 .musicIndexItemTextContainer{
-    width: 250px;
+    width: 400px;
     height: 260px;
     padding-left: 35px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .musicIndexItemTextTitleContainer{
     font-family: Semibold,sans-serif;
@@ -24,7 +27,7 @@
 .musicIndexItemTextInfoContainer{
     font-family: Semilight,sans-serif;
     font-size: 14px;
-    padding-top: 60px;
+    padding-bottom: 20px;
 }
 
 .musicIndexItemTextTitle{

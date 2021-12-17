@@ -9,6 +9,12 @@
     width: 250px;
     margin: 20px 15px;
 }
+.itemMain:hover{
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 0.25s;
+    animation-name: itemMainBoxGlow;
+}
 .itemMainGrid{
     background: rgba(40,40,40,0.1);
     border-radius: 7px;
@@ -35,7 +41,7 @@
 }
 .entry-text{
     margin-top: -10px;
-    height: 150px;
+    height: 130px;
     padding: 10px;
     overflow: hidden;
 }
@@ -54,14 +60,20 @@
     white-space: nowrap;
     overflow: hidden;
 }
+.itemTitle:hover{
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-name: itemMainTextGlow;
+    animation-timing-function: ease-in-out;
+}
 .itemText{
     font-family: Semilight,sans-serif;
     font-size: 13px;
     opacity: 90%;
-    height: 87px;
+    height: 70px;
     margin-top: -4px;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
 }
 .hrefNoEffect{
@@ -84,4 +96,31 @@
     padding-top: 2px;
     font-size: 12px;
     opacity: 75%;
+}
+.itemSubContainer{
+    display: flex;
+    align-items: center;
+    padding-top: 2px;
+}
+.itemSubImg{
+    height: 15px;
+    padding-right: 8px;
+}
+.itemSubText{
+    font-family: Semilight,sans-serif;
+    opacity: 90%;
+    font-size: 12px;
+    padding-right: 20px;
+}
+
+@keyframes itemMainTextGlow {
+    to{
+        color: rgb(232,232,246);
+        text-shadow: 0 0 3px rgb(161,161,236);
+    }
+}
+@keyframes itemMainBoxGlow {
+    to{
+        box-shadow: 0 0 7px rgb(151,151,240);
+    }
 }

@@ -21,9 +21,6 @@
     <link rel="stylesheet" type="text/css" href="css/fontsImport.css">
     <link rel="stylesheet" type="text/css" href="css/indexContainer.css">
 
-    <script src="scripts/mainBar/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
-    <script src="scripts/mainBar/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
-    <script src="scripts/mainBar/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
 </head>
 <body>
 <div class="container" id="main">
@@ -45,10 +42,13 @@
             <script src="scripts/mainBar/hrefAutoAdd/mainBarHrefAutoAddIndex.js"></script> <!--自动添加导航条内容-->
         </div>
     </div>
+
+    <script src="scripts/mainBar/mainBarStyleAutoFix.js"></script> <!--标题条自动设置-->
+    <script src="scripts/mainBar/mainBarAutoHideAnimate.js"></script> <!--标题条自动隐藏动画-->
+
     <div id="backGroundContainerBox" class="backGroundContainerBox">
         <div id="backGroundMain"
              style="height: 550px;
-             background-image: url('images/background/01.png');
              background-repeat: no-repeat;
              background-position: center;
              background-size: 1526px;
@@ -58,6 +58,10 @@
              z-index: -1">
             <div id="backGroundBlock" style="background: rgba(40,40,40,0.2);height: 550px"></div>
         </div>
+
+        <script src="scripts/mainBar/randomBackgroundImage.js"></script>
+        <script src="scripts/mainBar/mainBackGroundAutoSize.js"></script> <!--背景壁纸自适应-->
+
         <div id="backGroundTextContainer" class="backGroundTextContainer">
             <div id="backGroundTitle" class="backGroundTitle">
                 ようこそ！これはやみヒカリのブログ！
@@ -71,7 +75,7 @@
     <div id="secondaryContainer" class="secondaryStyle"> <!--此处的css样式在indexContainer-->
         <div id="moduleItem-Media">
             <div class="itemContainer">
-                <div style="font-family: Semibold,sans-serif;opacity: 20%;text-align: center;padding-top: 10px;font-size: 16px">首页同类最多显示五项</div>
+                <div style="font-family: Semibold,sans-serif;opacity: 20%;text-align: center;padding-top: 10px;font-size: 16px">首页同类只显示最近的五项</div>
                 <div class="textRow">
                     <div class="itemTextRowTitle">音乐分享</div>
                     <div class="itemTextRowText">分享一些自己喜欢的音乐</div>
@@ -82,7 +86,7 @@
                             <article class="postItemStyle">
                                 <div class="entry-media">
                                     <a href="index.html" class="hrefNoEffect">
-                                        <img style="left: -20%" class="imageLoad" src="images/background/03.jpg" alt="图片加载失败">
+                                        <img style="left: -20%" class="imageLoad" src="images/background/default.jpg" alt="图片加载失败">
                                     </a>
                                 </div>
                                 <div class="entry-text">
@@ -117,7 +121,7 @@
                             <article class="postItemStyle">
                                 <div class="entry-media">
                                     <a href="index.html" class="hrefNoEffect">
-                                        <img style="left: -20%" class="imageLoad" src="images/background/03.jpg" alt="图片加载失败">
+                                        <img style="left: -20%" class="imageLoad" src="images/background/default.jpg" alt="图片加载失败">
                                     </a>
                                 </div>
                                 <div class="entry-text">
@@ -152,7 +156,7 @@
                             <article class="postItemStyle">
                                 <div class="entry-media">
                                     <a href="index.html" class="hrefNoEffect">
-                                        <img style="left: -20%" class="imageLoad" src="images/background/03.jpg" alt="图片加载失败">
+                                        <img style="left: -20%" class="imageLoad" src="images/background/default.jpg" alt="图片加载失败">
                                     </a>
                                 </div>
                                 <div class="entry-text">
@@ -182,12 +186,12 @@
                     <div class="itemTextRowText">不一定有用的八嘎小应用</div>
                 </div>
                 <div class="itemMainGrid">
-                    <div class="row" id="itemMainRow-tools">
+                    <div class="row" id="itemMainRow-Tools">
                         <div class="itemMain" style="display: block">
                             <article class="postItemStyle">
                                 <div class="entry-media">
                                     <a href="index.html" class="hrefNoEffect">
-                                        <img style="left: -20%" class="imageLoad" src="images/background/03.jpg" alt="图片加载失败">
+                                        <img style="left: -20%" class="imageLoad" src="images/background/default.jpg" alt="图片加载失败">
                                     </a>
                                 </div>
                                 <div class="entry-text">
@@ -213,8 +217,10 @@
         <script src="scripts/itemGET/itemGet.js"></script> <!--页面元素自动导入-->
 
         <div class="subTextContainer">
-            <div>网页制作: kri_YamiHikari</div>
-            <div>QQ: 1906178267</div>
+            <div id="subText">
+                网页制作: kri_YamiHikari<br>
+                QQ: 1906178267
+            </div>
         </div>
     </div>
 </div>

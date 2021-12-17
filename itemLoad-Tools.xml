@@ -1,0 +1,23 @@
+<main>
+	<!-- &lt;表示小于号<  &gt;表示大于号> -->
+	<!--
+	小于号和大于号在xml文档当中有特殊含义
+	所以如果需要以文本的形式写入数据则需要转义
+	不然标签会被错误的识别 -->
+	<!--详情查看https://www.w3school.com.cn/xml/xml_syntax.asp-->
+    <moduleItem-Tools>
+        <windows>
+            <randomRedEnvelope>
+                <item>
+                    <imageLeft>-0.5%</imageLeft>
+                    <title>红包抽奖</title>
+                    <text>
+                        随机抽奖摸红包 &lt;br&gt;
+                        内容自定义
+                    </text>
+                    <date>2021-11-23 00:52</date>
+                </item>
+            </randomRedEnvelope>
+        </windows>
+    </moduleItem-Tools>
+</main>
