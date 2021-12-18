@@ -7,6 +7,7 @@ function main() {
     if (w1<810){
         barText.style.display='none'
         barImageContainer.style.width=w1+'px'
+        barImageContainer.style.marginLeft=Number(0).toString()
     }else{
         barText.style.display='block'
         barImageContainer.style.width='auto'
