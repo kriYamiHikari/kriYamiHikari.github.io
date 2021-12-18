@@ -64,7 +64,7 @@ function main() {
         if (this.readyState===4 && this.status===200){
             text=this.responseText
             if (isTranslate===true){
-                xmlHttpLyricTS.open("get","lyricTS.txt",true)
+                xmlHttpLyricTS.open("get","lyricTranslate.lrc",true)
                 xmlHttpLyricTS.send()
             }else {
                 init()

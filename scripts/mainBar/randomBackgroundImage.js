@@ -1,4 +1,3 @@
-let backgroundImageWidth=0
 function main(){
     let ajax=new XMLHttpRequest()
     let imageXML=new Document()
@@ -22,7 +21,6 @@ function main(){
         imageURL=imageHeadURL+imageList[randomIndex].children[0].textContent.replace("\\","/")
 
         backgroundMain.style.backgroundImage="url('"+imageURL+"')"
-        backgroundImageWidth=Number(imageList[randomIndex].children[1].textContent)
     }
 }
 main()
