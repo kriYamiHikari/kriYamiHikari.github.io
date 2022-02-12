@@ -16,6 +16,7 @@ function main() {
     let nextRealTime,wordRender=0
     let playing=false
     let t=-1
+    let tsArray //翻译数组
 
     let delayTimeScroll=0 //延迟执行
     let isPositionEnd=false,isAutoScroll=false,disableAutoScroll=false
@@ -57,6 +58,7 @@ function main() {
         if (this.readyState===4 && this.status===200){
             translateText=this.responseText
             musicLyricOriginTranslateText.innerHTML=translateText
+            tsArray = translateText.split('\n')
             init()
         }
     }
@@ -134,7 +136,7 @@ function main() {
             newTimeLine=cutLineTime.replace(/.*<\/div>/g,"<div class='newTimeLine'>"+"$&"+"</div>") //时间行初始样式 隐藏 布局一定要是flex
             newTextLine=cutLineLyric.replace(/.*<\/div>/g,"<div class='newTextLine'>"+"$&"+"</div>")//歌词初始样式 布局一定要是flex
             if (isTranslate===true){
-                newTSLine=musicLyricOriginTranslateText.getElementsByTagName("div")[i].innerHTML.replace(/.*/,"<div class='newTextTSLine'><div style='cursor: pointer'>"+"$&"+"</div></div>")
+                newTSLine=tsArray[i].replace(/.*/,"<div class='newTextTSLine'><div style='cursor: pointer'>"+"$&"+"</div></div>")
                 mergeLine=newTimeLine+newTextLine+newTSLine
             }else{
                 mergeLine=newTimeLine+newTextLine

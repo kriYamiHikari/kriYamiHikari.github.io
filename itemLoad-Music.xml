@@ -122,7 +122,40 @@
                     <language>English</language>
                     <date>2021-12-10 03:03</date>
                 </item>
+                <item>
+                    <imageLeft>-3%</imageLeft>
+                    <title>光</title>
+                    <text>
+                        茶理理理子
+                    </text>
+                    <language>Chinese</language>
+                    <date>2021-12-10 03:03</date>
+                </item>
             </茶理理理子>
+            <胡夏>
+                <item>
+                    <imageLeft>0%</imageLeft>
+                    <title>那些年</title>
+                    <text>
+                        胡夏&lt;br&gt;
+                        (那些年，我们一起追的女孩) 主题曲
+                    </text>
+                    <language>Chinese</language>
+                    <date>2022-01-08 13:59</date>
+                </item>
+            </胡夏>
+            <初音未来>
+                <item>
+                    <imageLeft>5%</imageLeft>
+                    <title>千本桜</title>
+                    <text>
+                        初音未来(黒うさP)&lt;br&gt;
+                        第三首VOCALOID神话曲
+                    </text>
+                    <language>Japanese</language>
+                    <date>2022-01-08 14:02</date>
+                </item>
+            </初音未来>
         </artists>
     </moduleItem-Media>
 </main>

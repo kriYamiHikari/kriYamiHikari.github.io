@@ -82,7 +82,7 @@ function main(){
         afterTxt=afterTxt.replace(/This is a test Title/,itemTitle) //替换元素标题
         afterTxt=afterTxt.replace(/images\/background\/default.jpg/,itemImageSrc) //替换元素图片
         afterTxt=afterTxt.replace(/index\.html/g,itemHtmlSrc) //替换元素跳转网页路径
-        afterTxt=afterTxt.replace(/left: -20%/,"left: " + itemImageLeftPositionOffset) //替换元素图片左偏移程度
+        //afterTxt=afterTxt.replace(/left: -20%/,"left: " + itemImageLeftPositionOffset) //替换元素图片左偏移程度
         afterTxt=afterTxt.replace(/This is a test Date/,itemAddDate)
 
         if (rowName.children.length<5){
