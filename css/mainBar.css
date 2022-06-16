@@ -34,9 +34,11 @@
     width: 85px;
     display: flex;
     justify-content: center;
+    outline: none;
 }
 .mainBarImageText{
     padding-top: 9px;
+    outline: none;
 }
 .mainBarImageContainer{
     display: flex;

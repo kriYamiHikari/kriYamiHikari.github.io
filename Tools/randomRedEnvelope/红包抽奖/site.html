@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../../../css/indexBackGround.css">
     <link rel="stylesheet" type="text/css" href="../../../css/fontsImport.css">
     <link rel="stylesheet" type="text/css" href="../../../css/indexContainer.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/topMenu.css">
 
     <link rel="stylesheet" type="text/css" href="../../../css/musicHTML/musicIndex.css">
 
@@ -84,17 +85,49 @@
     </div>
 
     <div id="secondaryContainer" class="secondaryStyle">
-        <div class="redEnvelopeItemInputContainer">
-            <div class="redEnvelopeItemRemind">
-                请输入奖品信息 用英语分号(;)做结尾隔开不同物品<br>
-                item;item;item;
+        <div id="inputModelChangeContainer" class="redEnvelopeModelContainer">
+            <div class="redEnvelopeItemRemind" style="font-size: 18px">切换模式</div>
+            <div>
+                <button class="dropMenuButton" id="inputItemMode">手动输入物品</button>
+                <button class="dropMenuButton" id="rangeNumberItemMode">区间选号</button>
             </div>
-            <div class="redEnvelopeItemInputTextareaContainer">
-                <label>
-                    <textarea class="redEnvelopeItemInputTextarea" id="redEnvelopeInputTextarea"></textarea>
-                </label>
+        </div>
+        <div class="redEnvelopeItemInputContainer" id="redEnvelopeTextAreaContainer">
+            <div>
+                <div id="redEnvelopeInputMode" class="showAnimation">
+                    <div class="redEnvelopeItemRemind">
+                        请输入奖品信息<br>
+                        用竖杠( | )做结尾来隔开不同物品<br>
+                        例如：物品名字;物品名字;物品名字;
+                    </div>
+                    <div class="redEnvelopeItemInputTextareaContainer">
+                        <label>
+                        <textarea class="redEnvelopeItemInputTextarea"
+                                  id="redEnvelopeInputTextarea"
+                                  style="width: 600px; height: 100px" placeholder="请输入奖品信息"></textarea>
+                        </label>
+                    </div>
+                </div>
+                <div id="redEnvelopeRangeMode" class="hidden">
+                    <div class="redEnvelopeItemRemind">
+                        请输入一个区间序号<br>
+                        点击生成即可自动根据区间生成指定数量的红包
+                    </div>
+                    <div class="redEnvelopeItemInputTextareaContainer">
+                        <label>
+                            <textarea class="redEnvelopeItemInputTextarea" id="redEnvelopeRangeMinTextarea"
+                                      style="width: 180px; height: 44px; white-space: nowrap;margin-right: 20px"
+                                      placeholder="请输入区间最小值"></textarea>
+                        </label>
+                        <label>
+                            <textarea class="redEnvelopeItemInputTextarea" id="redEnvelopeRangeMaxTextarea"
+                                      style="width: 180px; height: 44px; white-space: nowrap"
+                                      placeholder="请输入区间最大值"></textarea>
+                        </label>
+                    </div>
+                </div>
             </div>
-            <button id="send" class="redEnvelopeItemButton">点击生成随机红包</button>
+            <button id="send" class="dropMenuButton" style="margin-top: 10px">点击生成随机红包</button>
         </div>
 
         <div class="redEnvelopeItemContainer" id="envelopeContainer">
